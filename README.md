@@ -1,5 +1,5 @@
 # Figurkoder.se
-This is a project in the course 2dv607 - RIA-development with JavaScript at [Linnaeus University](https://coursepress.lnu.se/program/webbprogrammerare/)
+This is a project in the course [2dv607 - RIA-development with JavaScript](https://coursepress.lnu.se/kurs/ria-utveckling-med-javascript/) at [Linnaeus University](https://coursepress.lnu.se/program/webbprogrammerare/)
 
 ## Material-UI
 This project is based on an example from [Material-UI](http://callemall.github.io/material-ui/). The project uses both the webpack configs and the Material-UI React components as well.
