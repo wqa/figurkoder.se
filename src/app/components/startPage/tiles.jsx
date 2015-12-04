@@ -1,5 +1,5 @@
 import React from 'react';
-import Tile from './Tile';
+import Tile from './tile';
 import { Grid, Cell } from 'react-mdl';
 
 const Tiles = React.createClass({
@@ -18,4 +18,4 @@ const Tiles = React.createClass({
   }
 });
 
-module.exports = Tiles;
+export default Tiles;

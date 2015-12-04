@@ -3,14 +3,6 @@ import { Layout, Navigation, Drawer, Content, Footer } from 'react-mdl';
 import Menu from './shared/menu';
 import CustomHeader from './shared/customHeader';
 import Tiles from './startPage/tiles';
-import Tile from './startPage/tile';
-
-
-// let Layout = ReactMDL.Layout;
-// let Header = ReactMDL.Header;
-// let Navigation = ReactMDL.Navigation;
-// let Drawer = ReactMDL.Drawer;
-// let Content = ReactMDL.Content;
 
 const Main = React.createClass({
   render(){
@@ -85,4 +77,4 @@ const Main = React.createClass({
 
 });
 
-module.exports = Main;
+export default Main;

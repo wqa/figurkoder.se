@@ -10,4 +10,4 @@ const CustomHeader = React.createClass({
   }
 });
 
-module.exports = CustomHeader;
+export default CustomHeader;
