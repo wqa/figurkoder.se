@@ -9,11 +9,9 @@ const Tiles = React.createClass({
     tiles.push(<Cell col={2} tablet={2} phone={2}><Tile /></Cell>);
   }
     return(
-      <div style={{ width: '90%', margin: 'auto' }}>
         <Grid>
           {tiles}
         </Grid>
-      </div>
     );
   }
 });
