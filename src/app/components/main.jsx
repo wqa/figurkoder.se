@@ -1,5 +1,9 @@
 import React from 'react';
-import { Layout, Header, Navigation, Drawer, Content, Footer } from 'react-mdl';
+import { Layout, Navigation, Drawer, Content, Footer } from 'react-mdl';
+import Menu from './shared/menu';
+import CustomHeader from './shared/customHeader';
+import Tiles from './startPage/tiles';
+import Tile from './startPage/tile';
 
 
 // let Layout = ReactMDL.Layout;
@@ -12,21 +16,15 @@ const Main = React.createClass({
   render(){
     return(
       <Layout fixedHeader>
-        <Header waterfall title={<span><span style={{ color: '#ddd' }}>Ursäkta röran, vi bygger om. / </span><strong>Figurkoder.se</strong></span>}>
-        </Header>
-        <Drawer title="Meny">
-          <Navigation>
-            <a href="">Hem</a>
-            <a href="">Om sidan</a>
-            <a href="">Vanliga frågor</a>
-            <a href="">Kontakta mig</a>
-          </Navigation>
-        </Drawer>
-        <Content />
+        <CustomHeader />
+        <Menu />
+        <Content>
+          <Tiles />
+        </Content>
         <Footer />
       </Layout>
-  );
-}
+    );
+  }
 
   // childContextTypes: {
   //   muiTheme: React.PropTypes.object,
