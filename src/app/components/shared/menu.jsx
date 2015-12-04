@@ -1,8 +1,7 @@
 import React from 'react';
 import { Navigation, Drawer } from 'react-mdl';
 
-const Menu = React.createClass({
-  render(){
+const Menu = () =>{
     return(
       <Drawer title="Meny">
         <Navigation>
@@ -13,7 +12,6 @@ const Menu = React.createClass({
         </Navigation>
       </Drawer>
     );
-  }
-});
+};
 
 export default Menu;
