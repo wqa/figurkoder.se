@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Navigation, Drawer, Content, Footer } from 'react-mdl';
+import { Layout, Content, Footer } from 'react-mdl';
 import Menu from './shared/menu';
 import CustomHeader from './shared/customHeader';
 import Tiles from './startPage/tiles';
