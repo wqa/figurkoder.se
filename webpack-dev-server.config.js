@@ -19,7 +19,8 @@ var config = {
   //Server Configuration options
   devServer:{
     contentBase: 'src/www',  //Relative directory for base of server
-    devtool: 'eval',
+    // devtool: 'eval',
+    devtool: 'source-map',
     hot: true,        //Live-reload
     inline: true,
     port: 3000        //Port Number
