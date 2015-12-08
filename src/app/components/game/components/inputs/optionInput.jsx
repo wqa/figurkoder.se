@@ -9,7 +9,12 @@ const OptionInput = React.createClass({
   //   },
 
   onSwitch(e){
-    console.log(e.target.checked);
+    if(e.target.checked) {
+      console.log("Practice!");
+    }
+    else {
+      console.log("Training!");
+    }
   },
 
   render(){

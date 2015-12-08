@@ -1,10 +1,11 @@
 import React from 'react';
 import { Grid, Cell, Textfield } from 'react-mdl';
 
-import TimeInput from './inputs/timeInput';
-import OptionInput from './inputs/optionInput';
-import StartStop from './inputs/startStop';
-import DropdownInput from './inputs/dropdownInput';
+import TimeInput from './components/inputs/timeInput';
+import OptionInput from './components/inputs/optionInput';
+import StartStop from './components/inputs/startStop';
+import DropdownInput from './components/inputs/dropdownInput';
+import GameOptionCell from './components/gameOptionCell';
 
 const GameOptions = React.createClass({
   render(){
@@ -16,35 +17,22 @@ const GameOptions = React.createClass({
         <Grid style={{
             paddingBottom: '0'
           }}>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto',
-              alignSelf: "center",
-              padding: '10px 0 10px 0'
-            }}>
+          <GameOptionCell>
             <DropdownInput
               description="Första bokstaven"
               options={["A", "B"]} />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto',
-              alignSelf: "center",
-              padding: '10px 0 10px 0'
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <DropdownInput
               description="Andra bokstaven"
               options={["A", "B", "C"]} />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto'
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <TimeInput />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto',
-              alignSelf: "center"
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <OptionInput />
-          </Cell>
+          </GameOptionCell>
         </Grid>
         <StartStop />
       </div>

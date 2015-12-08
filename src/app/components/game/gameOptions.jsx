@@ -1,8 +1,10 @@
 import React from 'react';
 import { Grid, Cell, Textfield } from 'react-mdl';
-import TimeInput from './inputs/timeInput';
-import OptionInput from './inputs/optionInput';
-import StartStop from './inputs/startStop';
+
+import TimeInput from './components/inputs/timeInput';
+import OptionInput from './components/inputs/optionInput';
+import StartStop from './components/inputs/startStop';
+import GameOptionCell from './components/gameOptionCell';
 
 const GameOptions = React.createClass({
   propTypes: {
@@ -41,9 +43,7 @@ const GameOptions = React.createClass({
         <Grid style={{
             paddingBottom: '0'
           }}>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto'
-            }}>
+          <GameOptionCell>
             <Textfield
               min="0" max="99"
               autofocus
@@ -56,10 +56,8 @@ const GameOptions = React.createClass({
               floatingLabel
               value={this.state.start}
             />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto'
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <Textfield
               min="0" max="99"
               autoComplete="off"
@@ -71,18 +69,13 @@ const GameOptions = React.createClass({
               floatingLabel
               value={this.state.stop}
             />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto'
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <TimeInput />
-          </Cell>
-          <Cell col={6} tablet={4} phone={2} style={{
-              margin:'0 auto 0 auto',
-              alignSelf: "center"
-            }}>
+          </GameOptionCell>
+          <GameOptionCell>
             <OptionInput />
-          </Cell>
+          </GameOptionCell>
         </Grid>
         <StartStop />
       </div>
