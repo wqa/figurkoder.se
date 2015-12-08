@@ -1,12 +1,11 @@
 import React from 'react';
 import Master from './shared/master';
-
 import InGameHeader from './shared/inGameHeader';
 import Description from './game/description';
 import GameOptions from './game/gameOptions';
 import Playground from './game/playground';
 
-const Main = React.createClass({
+const Game = React.createClass({
   render(){
     return(
       <Master>
@@ -19,4 +18,4 @@ const Main = React.createClass({
   }
 });
 
-export default Main;
+export default Game;
