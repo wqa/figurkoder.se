@@ -7,16 +7,13 @@ import StartStop from './components/inputs/startStop';
 import DropdownInput from './components/inputs/dropdownInput';
 import GameOptionCell from './components/gameOptionCell';
 
+import GlobalStyles from '../shared/globalStyles';
+
 const GameOptions = React.createClass({
   render(){
     return(
-      <div style={{
-          padding: '0 10px 10px 10px',
-          // display: 'flex'
-        }}>
-        <Grid style={{
-            paddingBottom: '0'
-          }}>
+      <div style={GlobalStyles.game.div}>
+        <Grid style={GlobalStyles.game.grid}>
           <GameOptionCell>
             <DropdownInput
               description="Första bokstaven"

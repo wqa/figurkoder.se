@@ -1,6 +1,20 @@
 import React from 'react';
 import { Icon, FABButton } from 'react-mdl';
 
+const styles = {
+  div: {
+      display: 'flex',
+      flexWrap: 'nowrap',
+      justifyContent: 'space-around',
+      paddingBottom: '10px'
+    },
+  FABButton: {
+    height: '40px',
+    width: '40px',
+    minWidth: '40px'
+  }
+};
+
 const StartStop = React.createClass({
   start(){
     console.log("Start!");
@@ -16,34 +30,17 @@ const StartStop = React.createClass({
 
   render(){
     return(
-        <div style={{
-            display: 'flex',
-            flexWrap: 'nowrap',
-            justifyContent: 'space-around',
-            paddingBottom: '10px'
-          }}>
+        <div style={styles.div}>
           <FABButton ripple onClick={this.start}
-            style={{
-              height: '40px',
-              width: '40px',
-              minWidth: '40px'
-            }}>
+            style={styles.FABButton}>
             <Icon name="play_arrow" />
           </FABButton>
           <FABButton ripple onClick={this.pause}
-            style={{
-              height: '40px',
-              width: '40px',
-              minWidth: '40px'
-            }}>
+            style={styles.FABButton}>
             <Icon name="pause" />
           </FABButton>
           <FABButton ripple onClick={this.stop}
-            style={{
-              height: '40px',
-              width: '40px',
-              minWidth: '40px'
-            }}>
+            style={styles.FABButton}>
             <Icon name="stop" />
           </FABButton>
         </div>

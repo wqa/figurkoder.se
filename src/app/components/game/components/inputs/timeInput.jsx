@@ -1,6 +1,12 @@
 import React from 'react';
 import { Textfield } from 'react-mdl';
 
+const styles = {
+  Textfield: {
+    paddingBottom: '10px'
+  }
+};
+
 const TimeInput = React.createClass({
 getInitialState(){
     return {
@@ -22,9 +28,7 @@ getInitialState(){
       label="Tid (sekunder):"
       floatingLabel
       value={this.state.time}
-      style={{
-        paddingBottom: '10px'
-      }}
+      style={styles.Textfield}
       />
     );
   }

@@ -1,12 +1,16 @@
 import React, { PropTypes } from 'react';
 
+const styles = {
+  div: {
+      padding: '0 10px 0 10px'
+    }
+};
+
 const Description = (props) => {
   const { description } = props;
 
   return(
-    <div style={{
-        padding: '0 10px 0 10px'
-      }}>
+    <div style={styles.div}>
       { description }
     </div>
 

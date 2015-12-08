@@ -2,12 +2,6 @@ import React from 'react';
 import { Switch } from 'react-mdl';
 
 const OptionInput = React.createClass({
-  // getInitialState(){
-  //     return {
-  //       practice: false
-  //     };
-  //   },
-
   onSwitch(e){
     if(e.target.checked) {
       console.log("Practice!");

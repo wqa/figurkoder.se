@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Main from './components/main.jsx'; // Our custom react component
 
+import StartPage from './components/startPage.jsx';
+import Game from './components/game.jsx';
+import Result from './components/result.jsx';
+
 //Needed for React Developer Tools
 window.React = React;
 
@@ -14,4 +18,4 @@ injectTapEventPlugin();
 
 // Render the main app react component into the app div.
 // For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
-ReactDOM.render(<Main />, document.getElementById('app'));
+ReactDOM.render(<StartPage />, document.getElementById('app'));

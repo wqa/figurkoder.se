@@ -1,14 +1,18 @@
 import React, { PropTypes } from 'react';
 import { DataTable } from 'react-mdl';
 
+const styles = {
+  datatable: {
+   width: '100%'
+ }
+};
+
 const ResultTable = (props) => {
   const { results } = props;
 
   return(
     <DataTable
-      style={{
-       width: '100%'
-     }}
+      style={styles.datatable}
       columns={[
           {name: 'mnemomicImage', label: 'Figurkod'},
           {name: 'time', label: 'Tid', numeric: true}

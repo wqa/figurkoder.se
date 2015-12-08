@@ -6,6 +6,14 @@ import OptionInput from './components/inputs/optionInput';
 import StartStop from './components/inputs/startStop';
 import GameOptionCell from './components/gameOptionCell';
 
+import GlobalStyles from '../shared/globalStyles';
+
+const styles = {
+  textfield: {
+    paddingBottom: '0'
+  }
+};
+
 const GameOptions = React.createClass({
   propTypes: {
     add: React.PropTypes.number
@@ -36,13 +44,8 @@ const GameOptions = React.createClass({
 
   render(){
     return(
-      <div style={{
-          padding: '0 10px 10px 10px',
-          // display: 'flex'
-        }}>
-        <Grid style={{
-            paddingBottom: '0'
-          }}>
+      <div style={GlobalStyles.game.div}>
+        <Grid style={GlobalStyles.game.div}>
           <GameOptionCell>
             <Textfield
               min="0" max="99"
@@ -54,9 +57,7 @@ const GameOptions = React.createClass({
               label="Från:"
               floatingLabel
               value={this.state.start}
-              style={{
-                paddingBottom: '0'
-              }}
+              style={styles.textfield}
             />
           </GameOptionCell>
           <GameOptionCell>
@@ -70,9 +71,7 @@ const GameOptions = React.createClass({
               label="Till:"
               floatingLabel
               value={this.state.stop}
-              style={{
-                paddingBottom: '0'
-              }}
+              style={styles.textfield}
             />
           </GameOptionCell>
           <GameOptionCell>
