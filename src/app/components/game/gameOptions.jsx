@@ -46,7 +46,6 @@ const GameOptions = React.createClass({
           <GameOptionCell>
             <Textfield
               min="0" max="99"
-              autofocus
               autoComplete="off"
               type="number"
               onChange={this.onStartChange}

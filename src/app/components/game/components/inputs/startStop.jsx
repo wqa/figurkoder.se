@@ -22,7 +22,7 @@ const StartStop = React.createClass({
             justifyContent: 'space-around',
             paddingBottom: '10px'
           }}>
-          <FABButton onClick={this.start}
+          <FABButton ripple onClick={this.start}
             style={{
               height: '40px',
               width: '40px',
@@ -30,7 +30,7 @@ const StartStop = React.createClass({
             }}>
             <Icon name="play_arrow" />
           </FABButton>
-          <FABButton onClick={this.pause}
+          <FABButton ripple onClick={this.pause}
             style={{
               height: '40px',
               width: '40px',
@@ -38,7 +38,7 @@ const StartStop = React.createClass({
             }}>
             <Icon name="pause" />
           </FABButton>
-          <FABButton onClick={this.stop}
+          <FABButton ripple onClick={this.stop}
             style={{
               height: '40px',
               width: '40px',

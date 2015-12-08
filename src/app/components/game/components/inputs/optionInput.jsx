@@ -19,14 +19,8 @@ const OptionInput = React.createClass({
 
   render(){
     return (
-        // <Textfield
-        //   onChange={() => {}}
-        //   pattern="-?[0-9]*(\.[0-9]+)?"
-        //   error="Input is not a number!"
-        //   label="Läge:"
-        //   floatingLabel
-        // />
         <Switch
+          ripple
           id="practice"
           onChange={this.onSwitch}
           >Inlärning?</Switch>

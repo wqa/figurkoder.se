@@ -24,8 +24,8 @@ const Playground = React.createClass({
             flexWrap: 'nowrap',
             justifyContent: 'space-around'
           }}>
-          <Button onClick={this.show} raised>Visa <Icon name="done" /></Button>
-          <Button onClick={this.next} raised>Nästa <Icon name="skip_next" /></Button>
+          <Button onClick={this.show} ripple raised>Visa <Icon name="done" /></Button>
+          <Button onClick={this.next} ripple raised>Nästa <Icon name="skip_next" /></Button>
         </div>
       </div>
     );
