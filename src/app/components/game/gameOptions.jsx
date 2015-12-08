@@ -54,6 +54,9 @@ const GameOptions = React.createClass({
               label="Från:"
               floatingLabel
               value={this.state.start}
+              style={{
+                paddingBottom: '0'
+              }}
             />
           </GameOptionCell>
           <GameOptionCell>
@@ -67,6 +70,9 @@ const GameOptions = React.createClass({
               label="Till:"
               floatingLabel
               value={this.state.stop}
+              style={{
+                paddingBottom: '0'
+              }}
             />
           </GameOptionCell>
           <GameOptionCell>

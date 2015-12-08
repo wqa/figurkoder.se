@@ -22,6 +22,9 @@ getInitialState(){
       label="Tid (sekunder):"
       floatingLabel
       value={this.state.time}
+      style={{
+        paddingBottom: '10px'
+      }}
       />
     );
   }
