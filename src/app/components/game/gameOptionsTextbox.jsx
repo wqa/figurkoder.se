@@ -23,12 +23,6 @@ class GameOptionsDropdown extends React.Component {
     }
   }
 
-  getDefaultProps() {
-    return {
-      add: 9,
-    }
-  }
-
   onStartChange(e) {
     this.setState({start: e.target.value})
     let temp = (+e.target.value + this.props.add) <= 99 ? +e.target.value + this.props.add : 99
@@ -86,6 +80,10 @@ class GameOptionsDropdown extends React.Component {
 
 GameOptionsDropdown.propTypes = {
   add: React.PropTypes.number,
+}
+
+GameOptionsDropdown.defaultProps = {
+  add: 9,
 }
 
 export default GameOptionsDropdown
