@@ -1,49 +1,46 @@
-import React from 'react';
-import { Grid, Cell, Textfield } from 'react-mdl';
+import React from 'react'
+import { Grid, Cell, Textfield } from 'react-mdl'
 
-import TimeInput from './components/inputs/timeInput';
-import OptionInput from './components/inputs/optionInput';
-import StartStop from './components/inputs/startStop';
-import GameOptionCell from './components/gameOptionCell';
+import TimeInput from './components/inputs/timeInput'
+import OptionInput from './components/inputs/optionInput'
+import StartStop from './components/inputs/startStop'
+import GameOptionCell from './components/gameOptionCell'
 
-import GlobalStyles from '../shared/globalStyles';
+import GlobalStyles from '../shared/globalStyles'
 
 const styles = {
   textfield: {
-    paddingBottom: '0'
-  }
-};
-
-const GameOptions = React.createClass({
-  propTypes: {
-    add: React.PropTypes.number
+    paddingBottom: '0',
   },
+}
 
-  getDefaultProps(){
-    return {
-      add: 9
-    };
-  },
-
-  getInitialState () {
-    return {
+class GameOptionsDropdown extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       start: 0,
-      stop: 9
-    };
-  },
+      stop: 9,
+    }
+  }
 
-  onStartChange(e){
-    this.setState({start: e.target.value});
-    let temp = (+e.target.value + this.props.add) <= 99 ? +e.target.value + this.props.add : 99;
-    this.setState({stop: temp});
-  },
+  getDefaultProps() {
+    return {
+      add: 9,
+    }
+  }
 
-  onStopChange(e){
-    this.setState({stop: e.target.value});
-  },
+  onStartChange(e) {
+    this.setState({start: e.target.value})
+    let temp = (+e.target.value + this.props.add) <= 99 ? +e.target.value + this.props.add : 99
+    this.setState({stop: temp})
+  }
 
-  render(){
-    return(
+  onStopChange(e) {
+    this.setState({stop: e.target.value})
+  }
+
+  render() {
+    return (
       <div style={GlobalStyles.game.div}>
         <Grid style={GlobalStyles.game.div}>
           <GameOptionCell>
@@ -83,8 +80,12 @@ const GameOptions = React.createClass({
         </Grid>
         <StartStop />
       </div>
-    );
+    )
   }
-});
+}
 
-export default GameOptions;
+GameOptionsDropdown.propTypes = {
+  add: React.PropTypes.number,
+}
+
+export default GameOptionsDropdown

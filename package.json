@@ -1,7 +1,7 @@
 {
-  "name": "material-ui-example",
-  "version": "0.13.2",
-  "description": "Sample project that uses material-ui",
+  "name": "figurkoder",
+  "version": "0.0.1",
+  "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/callemall/material-ui.git"
@@ -26,9 +26,11 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
+    "history": "^1.13.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-mdl": "^1.0.2",
+    "react-router": "^1.0.2",
     "react-tap-event-plugin": "^0.2.1"
   }
 }
