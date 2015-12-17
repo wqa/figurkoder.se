@@ -1,15 +1,15 @@
 {
   "name": "figurkoder",
-  "version": "0.0.1",
+  "version": "0.0.2",
 
-  "description": "figurkoder.se ",
+  "description": "An appin Swedish for training mnemomic images",
   "repository": {
     "type": "git",
     "url": "https://github.com/OskarKlintrot/figurkoder.se"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --port 3000",
-    "build": "webpack --progress --colors"
+    "start": "webpack-dev-server",
+    "build": "webpack --progress --colors --production"
   },
   "private": true,
   "devDependencies": {
