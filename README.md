@@ -1,10 +1,7 @@
 # Figurkoder.se
 This is a project in the course [2dv607 - RIA-development with JavaScript](https://coursepress.lnu.se/kurs/ria-utveckling-med-javascript/) at [Linnaeus University](https://coursepress.lnu.se/program/webbprogrammerare/)
 
-## Material-UI
-This project is based on an example from [Material-UI](http://callemall.github.io/material-ui/). The project uses both the webpack configs and the Material-UI React components as well.
-
-### Installation
+## Installation
 After cloning the repository, install dependencies:
 ```
 cd <repo folder>
@@ -21,3 +18,5 @@ To build a static version of the project run:
 ```
 npm run build
 ```
+
+Note that all source code is located under `src/`
