@@ -5,7 +5,7 @@ import GameOptionsTextbox from './game/gameOptionsTextbox'
 import GameOptionsDropdown from './game/gameOptionsDropdown'
 import Playground from './game/playground'
 
-import Games from '../games'
+import Games from '../data/games'
 
 class Game extends React.Component{
   constructor(props) {

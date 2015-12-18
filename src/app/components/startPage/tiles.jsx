@@ -1,7 +1,7 @@
 import React from 'react'
 import Tile from './tile'
 import { Grid, Cell } from 'react-mdl'
-import Games from '../../games'
+import Games from '../../data/games'
 
 const style = {
   display: 'flex',
