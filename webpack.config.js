@@ -5,7 +5,7 @@ var sourcePath = path.resolve(__dirname, 'src')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 
-var production = process.argv.find((element) => element === '--production');
+const production = process.argv.find((element) => element === '--production')
 
 var config = {
     entry: {
