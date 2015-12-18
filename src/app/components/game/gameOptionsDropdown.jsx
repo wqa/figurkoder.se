@@ -9,30 +9,51 @@ import GameOptionCell from './components/gameOptionCell'
 
 import GlobalStyles from '../shared/globalStyles'
 
-const GameOptionsTextbox = () => {
-  return(
-    <div style={GlobalStyles.game.div}>
-      <Grid style={GlobalStyles.game.grid}>
-        <GameOptionCell>
-          <DropdownInput
-            description="Första bokstaven"
-            options={["A", "B"]} />
-        </GameOptionCell>
-        <GameOptionCell>
-          <DropdownInput
-            description="Andra bokstaven"
-            options={["A", "B", "C"]} />
-        </GameOptionCell>
-        <GameOptionCell>
-          <TimeInput />
-        </GameOptionCell>
-        <GameOptionCell>
-          <OptionInput />
-        </GameOptionCell>
-      </Grid>
-      <StartStop />
-    </div>
-  )
+class GameOptionsDropdown extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  onMenuChange(e){
+    console.log(e.target.value)
+  }
+
+  render(){
+    let allData = this.props.data()
+    let options = []
+    for (let item of allData) {
+      options.push(item[0])
+    }
+
+    return(
+      <div style={GlobalStyles.game.div}>
+        <Grid style={GlobalStyles.game.grid}>
+          <GameOptionCell>
+            <DropdownInput
+              description="Från"
+              options={options} />
+          </GameOptionCell>
+          <GameOptionCell>
+            <DropdownInput
+              description="Till"
+              options={options} />
+          </GameOptionCell>
+          <GameOptionCell>
+            <TimeInput />
+          </GameOptionCell>
+          <GameOptionCell>
+            <OptionInput />
+          </GameOptionCell>
+        </Grid>
+        <StartStop />
+      </div>
+    )
+  }
 }
 
-export default GameOptionsTextbox
+GameOptionsDropdown.propTypes = {
+  data: React.PropTypes.any,
+}
+
+export default GameOptionsDropdown

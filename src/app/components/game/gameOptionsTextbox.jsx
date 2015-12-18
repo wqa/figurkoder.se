@@ -14,7 +14,7 @@ const styles = {
   },
 }
 
-class GameOptionsDropdown extends React.Component {
+class GameOptionsTextbox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -24,12 +24,14 @@ class GameOptionsDropdown extends React.Component {
   }
 
   onStartChange(e) {
+    console.log(e.target.value)
     this.setState({start: e.target.value})
     let temp = (+e.target.value + this.props.add) <= 99 ? +e.target.value + this.props.add : 99
     this.setState({stop: temp})
   }
 
   onStopChange(e) {
+    console.log(e.target.value)
     this.setState({stop: e.target.value})
   }
 
@@ -39,12 +41,12 @@ class GameOptionsDropdown extends React.Component {
         <Grid style={GlobalStyles.game.div}>
           <GameOptionCell>
             <Textfield
-              min="0" max="99"
+              min="0" max={this.props.data().length}
               autoComplete="off"
               type="number"
-              onChange={this.onStartChange}
+              onChange={this.onStartChange.bind(this)}
               pattern="-?[0-9]*(\.[0-9]+)?"
-              error="Välj mellan 0-99!"
+              error={"Välj mellan 0-" + (this.props.data().length  - 1) + "!"}
               label="Från:"
               floatingLabel
               value={this.state.start}
@@ -53,13 +55,12 @@ class GameOptionsDropdown extends React.Component {
           </GameOptionCell>
           <GameOptionCell>
             <Textfield
-              min="0" max="99"
+              min="0" max={this.props.data().length}
               autoComplete="off"
               type="number"
-              onChange={this.onStopChange}
+              onChange={this.onStopChange.bind(this)}
               pattern="-?[0-9]*(\.[0-9]+)?"
-              error="Välj mellan 0-99!"
-              label="Till:"
+              error={"Välj mellan 0-" + (this.props.data().length  - 1) + "!"} label="Till:"
               floatingLabel
               value={this.state.stop}
               style={styles.textfield}
@@ -78,12 +79,13 @@ class GameOptionsDropdown extends React.Component {
   }
 }
 
-GameOptionsDropdown.propTypes = {
+GameOptionsTextbox.propTypes = {
   add: React.PropTypes.number,
+  data: React.PropTypes.any,
 }
 
-GameOptionsDropdown.defaultProps = {
+GameOptionsTextbox.defaultProps = {
   add: 9,
 }
 
-export default GameOptionsDropdown
+export default GameOptionsTextbox

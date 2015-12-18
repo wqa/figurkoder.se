@@ -1,6 +1,5 @@
-const MnemonicNameImages =
+export const MnemonicFemaleNameImages =
 [
-  // Female names
   ["Anna", "Ananasring"],
   ["Eva", "Vev (veva)"],
   ["Maria", "Krubba"],
@@ -51,8 +50,10 @@ const MnemonicNameImages =
   ["Helen", "Hel en"],
   ["Josefin", "Josförpackning"],
   ["Jessica", "ICA-skylt"],
+]
 
-  // Male name
+export const MnemonicMaleNameImages =
+[
   ["Lars", "Garagedörr"], // Larv
   ["Karl", "Karl-Johansvamp"],
   ["Anders", "And"],
@@ -105,4 +106,7 @@ const MnemonicNameImages =
   ["Filip", "Filmjölk"],
 ]
 
-export default MnemonicNameImages
+export const MnemonicNameImages = [
+  ...MnemonicFemaleNameImages,
+  ...MnemonicMaleNameImages,
+]

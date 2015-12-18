@@ -39,23 +39,31 @@ const Games = {
     start: 'Januari',
     stop: 'December',
     option: 'dropdown',
-    get: mnemonicData.getDaysImages,
+    get: mnemonicData.getMonthsImages,
   },
-  women: {
+  allName: {
+    title: 'Namn',
+    description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
+    start: 'Anna',
+    stop: 'Filip',
+    option: 'dropdown',
+    get: mnemonicData.getNameImages,
+  },
+  femaleName: {
     title: 'Kvinnonamn',
     description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
     start: 'Anna',
     stop: 'Jessica',
     option: 'dropdown',
-    get: mnemonicData.getNameImages,
+    get: mnemonicData.getFemaleNameImages,
   },
-  men: {
+  maleName: {
     title: 'Mansnamn',
     description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
     start: 'Lars',
     stop: 'Filip',
     option: 'dropdown',
-    get: mnemonicData.getNameImages,
+    get: mnemonicData.getMaleNameImages,
   },
 }
 

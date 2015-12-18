@@ -14,15 +14,20 @@ const styles = {
 }
 
 class DropdownInput extends React.Component {
+  onMenuChange(e){
+    console.log(e.target.value)
+  }
+
   render() {
     return (
       <select style={styles.select}
-        defaultValue={-1}>
+        defaultValue={-1}
+        onChange={this.onMenuChange.bind(this)} >
         <option disabled value={-1}>
           { this.props.description }
         </option>
         {this.props.options.map((option, key) => (
-          <option value={key}>
+          <option value={key} >
             {option}
           </option>
         ))}

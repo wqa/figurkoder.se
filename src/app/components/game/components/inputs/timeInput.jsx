@@ -15,7 +15,8 @@ class TimeInput extends React.Component {
     }
   }
 
-  onTimeChange(e){
+  onTimeChange(e) {
+    console.log(e.target.value)
     this.setState({time: e.target.value})
   }
 
@@ -23,7 +24,7 @@ class TimeInput extends React.Component {
     return (
     <Textfield
       type="number"
-      onChange={this.onTimeChange}
+      onChange={this.onTimeChange.bind(this)}
       pattern="-?[0-9]*(\.[0-9]+)?"
       error="Input is not a number!"
       label="Tid (sekunder):"

@@ -20,14 +20,17 @@ class Game extends React.Component{
       <div>
         <InGameHeader title={this.state.game.title} />
         <Description description={this.state.game.description} />
-        <Playground mnemomicImage='C' countdown={'Chokladtårta'} options={this.state.game.option} />
+        <Playground
+          mnemomicImage={this.state.game.get({begin: 0, end: 0})[0][0]}
+          countdown={this.state.game.get({begin: 0, end: 0})[0][1]}
+          options={this.state.game.option} />
           {(() => {
           switch (this.state.game.option) {
             case "textbox":
-              return <GameOptionsTextbox />
+              return <GameOptionsTextbox data={this.state.game.get} />
               break
               case "dropdown":
-                return <GameOptionsDropdown />
+                return <GameOptionsDropdown data={this.state.game.get} />
                 break
             default:
               return null
