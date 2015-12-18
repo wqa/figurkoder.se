@@ -15,7 +15,7 @@ class Tiles extends React.Component{
     for (let game in Games) {
       tiles.push(
         <Cell col={5} tablet={4} phone={2} style={style}>
-          <Tile description={[Games[game].start, Games[game].stop]} game={Games[game].title} url={game}/>
+          <Tile description={[Games[game].start, Games[game].stop]} game={Games[game].title} url={game} data={Games[game].get}/>
         </Cell>
       )
     }

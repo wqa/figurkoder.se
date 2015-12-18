@@ -1,3 +1,5 @@
+import mnemonicData from './mnemonic/mnemonicData'
+
 const Games = {
   twodigits: {
     title: 'Siffror',
@@ -5,6 +7,7 @@ const Games = {
     start: '00',
     stop: '99',
     option: 'textbox',
+    get: mnemonicData.getNumberImages,
   },
   threedigits: {
     title: 'Siffror',
@@ -12,6 +15,7 @@ const Games = {
     start: '000',
     stop: '999',
     option: 'textbox',
+    get: mnemonicData.getThreeCharNumberImages,
   },
   letters: {
     title: 'Bokstäver',
@@ -19,6 +23,7 @@ const Games = {
     start: 'A',
     stop: 'Ö',
     option: 'dropdown',
+    get: mnemonicData.getAlphabetImages,
   },
   days: {
     title: 'Veckodagar',
@@ -26,6 +31,15 @@ const Games = {
     start: 'Måndag',
     stop: 'Söndag',
     option: 'dropdown',
+    get: mnemonicData.getDaysImages,
+  },
+  month: {
+    title: 'Månaderna',
+    description: 'Låt oss öva på lite månaderna vetja! It be fun, they said...',
+    start: 'Januari',
+    stop: 'December',
+    option: 'dropdown',
+    get: mnemonicData.getDaysImages,
   },
   women: {
     title: 'Kvinnonamn',
@@ -33,6 +47,7 @@ const Games = {
     start: 'Anna',
     stop: 'Jessica',
     option: 'dropdown',
+    get: mnemonicData.getNameImages,
   },
   men: {
     title: 'Mansnamn',
@@ -40,6 +55,7 @@ const Games = {
     start: 'Lars',
     stop: 'Filip',
     option: 'dropdown',
+    get: mnemonicData.getNameImages,
   },
 }
 

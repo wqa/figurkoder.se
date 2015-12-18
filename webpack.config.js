@@ -8,33 +8,33 @@ var TransferWebpackPlugin = require('transfer-webpack-plugin')
 const production = process.argv.find((element) => element === '--production')
 
 var config = {
-    entry: {
-      js: [
-        'babel-polyfill',
-        './src/app/app.jsx',
-      ],
-      html: './src/www/index.html',
-    },
-    devServer:{
-      contentBase: 'src/www',
-      devtool: 'source-map',
-      hot: true,
-      inline: true,
-      port: 3000,
-    },
-    output: {
-        path: buildPath,
-        filename: 'boundle.min.js',
-    },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-      new TransferWebpackPlugin([
-        {from: 'www'},
-      ], sourcePath),
+  entry: {
+    js: [
+      'babel-polyfill',
+      './src/app/app.jsx',
     ],
-    module: {
-      preLoaders: [
+    html: './src/www/index.html',
+  },
+  devServer:{
+    contentBase: 'src/www',
+    devtool: 'source-map',
+    hot: true,
+    inline: true,
+    port: 3000,
+  },
+  output: {
+    path: buildPath,
+    filename: 'boundle.min.js',
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new TransferWebpackPlugin([
+      {from: 'www'},
+    ], sourcePath),
+  ],
+  module: {
+    preLoaders: [
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
@@ -43,30 +43,30 @@ var config = {
       },
     ],
     loaders: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: nodeModulesPath,
-          loaders: [
-              'react-hot',
-              'babel?' + JSON.stringify({
-                  presets: ["react", "es2015", "stage-1"],
-              }),
-          ],
-        },
-        {
-          test: /\.html$/,
-          loader: "file?name=[name].[ext]",
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['', '.js', '.jsx'],
-      root: __dirname,
-    },
-    devtool: 'source-map',
-    eslint: {
-      configFile: '.eslintrc',
-    },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: nodeModulesPath,
+        loaders: [
+            'react-hot',
+            'babel?' + JSON.stringify({
+                presets: ["react", "es2015", "stage-1"],
+            }),
+        ],
+      },
+      {
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]",
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['', '.ts', '.js', '.jsx'],
+    root: __dirname,
+  },
+  devtool: 'source-map',
+  eslint: {
+    configFile: '.eslintrc',
+  },
 }
 
 if (production) {

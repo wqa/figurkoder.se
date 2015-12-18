@@ -1,7 +1,6 @@
 {
   "name": "figurkoder",
   "version": "0.0.2",
-
   "description": "An appin Swedish for training mnemomic images",
   "repository": {
     "type": "git",
@@ -13,16 +12,16 @@
   },
   "private": true,
   "devDependencies": {
-    "babel-eslint": "^4.0.5",
-    "eslint": "^1.1.0",
-    "eslint-loader": "^1.0.0",
-    "eslint-plugin-react": "^3.2.2",
     "babel-core": "^6.2.1",
+    "babel-eslint": "^4.0.5",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-1": "^6.1.18",
+    "eslint": "^1.1.0",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.2.2",
     "file-loader": "^0.8.5",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.9",

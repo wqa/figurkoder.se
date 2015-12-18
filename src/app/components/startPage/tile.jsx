@@ -36,8 +36,8 @@ const styles = {
 }
 
 const Tile = (props) => {
-  let { description, game, url } = props
-
+  let { description, game, url, data } = props
+  // console.log(data().length)
   return (
     <Link to={'/game/' + url}>
       <Card shadow={0} style={styles.card}>
