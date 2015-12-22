@@ -20,9 +20,8 @@ class GameOptionsDropdown extends React.Component {
   }
 
   render(){
-    let allData = this.props.data()
     let options = []
-    for (let item of allData) {
+    for (let item of this.props.data) {
       options.push(item[0])
     }
 

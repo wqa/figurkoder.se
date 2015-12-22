@@ -6,39 +6,34 @@ import GameOptionsDropdown from './game/gameOptionsDropdown'
 import Playground from './game/playground'
 
 import Games from '../data/games'
+import GetMnemonicImages from '../data/mnemonic/getMnemonicImages'
 
-class Game extends React.Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      game: Games[this.props.params.game],
-    }
-  }
+const Game = (props) => {
+  let GameObject = Games[props.params.game],
+  Type = props.params.game
 
-  render() {
-    return(
-      <div>
-        <InGameHeader title={this.state.game.title} />
-        <Description description={this.state.game.description} />
-        <Playground
-          mnemomicImage={this.state.game.get({begin: 0, end: 0})[0][0]}
-          countdown={this.state.game.get({begin: 0, end: 0})[0][1]}
-          options={this.state.game.option} />
-          {(() => {
-          switch (this.state.game.option) {
-            case "textbox":
-              return <GameOptionsTextbox data={this.state.game.get} />
+  return(
+    <div>
+      <InGameHeader title={GameObject.title} />
+      <Description description={GameObject.description} />
+      <Playground
+        mnemomicImage={GetMnemonicImages({begin: 0, end: 0, type: Type})[0][0]}
+        countdown={GetMnemonicImages({begin: 0, end: 0, type: Type})[0][1]}
+        options={GameObject.option} />
+        {(() => {
+        switch (GameObject.option) {
+          case "textbox":
+            return <GameOptionsTextbox data={GameObject.data} />
+            break
+            case "dropdown":
+              return <GameOptionsDropdown data={GameObject.data} />
               break
-              case "dropdown":
-                return <GameOptionsDropdown data={this.state.game.get} />
-                break
-            default:
-              return null
-          }
-        })()}
-      </div>
-    )
-  }
+          default:
+            return null
+        }
+      })()}
+    </div>
+  )
 }
 
 export default Game

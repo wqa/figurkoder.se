@@ -16,7 +16,7 @@ const MnemonicHelper = {
 
   // A big thanks to Anton K. Andersson, http://antonkandersson.se/, for teaching me the following code
   pushArray(begin, end, source) {
-    return source.filter(function (element, index, array) {
+    return source.filter((element, index, array) => {
       return index >= begin && index < end
     })
   },

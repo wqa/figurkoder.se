@@ -41,12 +41,12 @@ class GameOptionsTextbox extends React.Component {
         <Grid style={GlobalStyles.game.div}>
           <GameOptionCell>
             <Textfield
-              min="0" max={this.props.data().length}
+              min="0" max={this.props.data.length}
               autoComplete="off"
               type="number"
               onChange={this.onStartChange.bind(this)}
               pattern="-?[0-9]*(\.[0-9]+)?"
-              error={"Välj mellan 0-" + (this.props.data().length  - 1) + "!"}
+              error={"Välj mellan 0-" + (this.props.data.length  - 1) + "!"}
               label="Från:"
               floatingLabel
               value={this.state.start}
@@ -55,12 +55,12 @@ class GameOptionsTextbox extends React.Component {
           </GameOptionCell>
           <GameOptionCell>
             <Textfield
-              min="0" max={this.props.data().length}
+              min="0" max={this.props.data.length}
               autoComplete="off"
               type="number"
               onChange={this.onStopChange.bind(this)}
               pattern="-?[0-9]*(\.[0-9]+)?"
-              error={"Välj mellan 0-" + (this.props.data().length  - 1) + "!"} label="Till:"
+              error={"Välj mellan 0-" + (this.props.data.length  - 1) + "!"} label="Till:"
               floatingLabel
               value={this.state.stop}
               style={styles.textfield}
