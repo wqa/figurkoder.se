@@ -6,6 +6,12 @@ const Actions = {
 			type: Constants.START_GAME,
 		}
 	},
+	setInterval(interval) {
+		return {
+			type: Constants.SET_INTERVAL,
+			interval: interval,
+		}
+	},
 }
 
 export default Actions

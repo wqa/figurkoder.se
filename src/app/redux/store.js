@@ -1,11 +1,13 @@
 import { combineReducers, createStore } from 'redux'
 import InitialState from './initialState'
-import Game from './reducers/Game'
+import GameReducer from './reducers/GameReducer'
+import SettingsReducer from './reducers/SettingsReducer'
 
 const reducers = combineReducers({
-    Game: Game,
+    game: GameReducer,
+    settings: SettingsReducer,
 })
 
-const store = createStore(reducers, InitialState)
+const store = createStore(reducers, InitialState())
 
 export default store

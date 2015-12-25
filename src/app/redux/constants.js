@@ -1,6 +1,7 @@
 const Constants = {
-    // ACTION TYPES
-    START_GAME: 'START_GAME',
+  // Actions
+	START_GAME: 'START_GAME',
+  SET_INTERVAL: 'SET_INTERVAL',
 }
 
 export default Constants
