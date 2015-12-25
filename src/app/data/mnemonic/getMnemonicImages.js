@@ -1,11 +1,11 @@
 import Games from '../games'
 import MnemonicHelper from "./mnemonicHelper"
 
-const GetMnemonicImages = (options) => {
-  options = options || {}
-  let begin = options.begin || null,
-  end = options.end || null, random = options.random || null
-
+const GetMnemonicImages = ({
+  begin: begin = null,
+  end: end = null,
+  random: random = false,
+}) => {
   const arr = Games[options.type].data
   if (!arr) { throw new Error("Unknown type: " + options.type) }
 
