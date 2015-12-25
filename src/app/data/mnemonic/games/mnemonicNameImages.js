@@ -8,8 +8,8 @@ const MnemonicNameImages = {
   stop: 'Filip',
   option: 'dropdown',
   data: [
-    ...MnemonicFemaleNameImages,
-    ...MnemonicMaleNameImages,
+    ...MnemonicFemaleNameImages.data,
+    ...MnemonicMaleNameImages.data,
   ],
 }
 

@@ -5,8 +5,9 @@ const GetMnemonicImages = ({
   begin: begin = null,
   end: end = null,
   random: random = false,
+  type: type = null,
 }) => {
-  const arr = Games[options.type].data
+  const arr = Games[type].data
   if (!arr) { throw new Error("Unknown type: " + options.type) }
 
   if (!begin && !end) {
