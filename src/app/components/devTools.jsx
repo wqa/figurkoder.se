@@ -7,7 +7,9 @@ console.log('DevTools loaded')
 
 export default createDevTools(
   <DockMonitor toggleVisibilityKey='ctrl-h'
-               changePositionKey='ctrl-q'>
+               changePositionKey='ctrl-q'
+               defaultIsVisible={ true }
+               defaultPosition='right'>
     <LogMonitor />
   </DockMonitor>
 )

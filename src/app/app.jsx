@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 // React Router
-import Root from './redux/root/root'
-import configureStore from './redux/store/store'
+import Root from './redux/root'
+import configureStore from './redux/store'
 
 import InitialState from './redux/initialState'
 
