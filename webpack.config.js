@@ -32,6 +32,9 @@ var config = {
     new TransferWebpackPlugin([
       {from: 'www'},
     ], sourcePath),
+    new webpack.DefinePlugin({
+        PRODUCTION: production,
+    }),
   ],
   module: {
     preLoaders: [
