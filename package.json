@@ -1,7 +1,7 @@
 {
   "name": "figurkoder",
   "version": "0.0.2",
-  "description": "An appin Swedish for training mnemomic images",
+  "description": "An app in Swedish for training mnemomic images",
   "repository": {
     "type": "git",
     "url": "https://github.com/OskarKlintrot/figurkoder.se"
