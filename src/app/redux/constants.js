@@ -4,8 +4,9 @@ const Constants = {
   SET_INTERVAL: 'SET_INTERVAL',
 }
 
-Constants.PRODUCTION = process.argv.find((element) => element === '--production')
+Constants.PRODUCTION = process.argv.find((element) => element === '--production') ? true : false
+console.log('Production: ' + Constants.PRODUCTION)
 
-Constants.PRODUCTION = false
+// Constants.PRODUCTION = true
 
 export default Constants

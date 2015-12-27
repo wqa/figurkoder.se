@@ -6,21 +6,20 @@ import routes from '../../routes'
 
 // Redux
 import { Provider } from 'react-redux'
-import Store from '../store/store'
 
 // Redux DevTools
-import DevTools from '../../components/devTools'
+import devTools from '../../components/devTools'
 
 const Root = (props) => {
   const { store } = props
 
   return (
-    <div>
-      <Provider store={ Store }>
+    <Provider store={ store }>
+      <div>
         <Router routes={ routes } />
-      </Provider>
-      <DevTools />
-    </div>
+        <devTools />
+      </div>
+    </Provider>
   )
 }
 

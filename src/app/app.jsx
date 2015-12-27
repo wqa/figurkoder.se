@@ -7,7 +7,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 
 // React Router
 import Root from './redux/root/root'
-import Store from './redux/store/store'
+import configureStore from './redux/store/store'
+
+import InitialState from './redux/initialState'
+
+const Store = configureStore(InitialState())
 
 //Needed for React Developer Tools
 window.React = React
