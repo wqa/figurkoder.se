@@ -1,14 +1,14 @@
-import Constants from "./constants"
+import ActionTypes from "./actionTypes"
 
 const Actions = {
 	startGame() {
 		return {
-			type: Constants.START_GAME,
+			type: ActionTypes.START_GAME,
 		}
 	},
 	setInterval(interval) {
 		return {
-			type: Constants.SET_INTERVAL,
+			type: ActionTypes.SET_INTERVAL,
 			interval: interval,
 		}
 	},

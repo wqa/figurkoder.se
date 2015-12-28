@@ -1,10 +1,10 @@
 import InitialState from '../initialState'
-import ActionTypes from '../actionTypes'
+import { ActionTypesGame } from '../actionTypes'
 
 const GameReducer = (state, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
-    case ActionTypes.game.START_GAME:
+    case ActionTypesGame.START_GAME:
       return newState
       break
     default:

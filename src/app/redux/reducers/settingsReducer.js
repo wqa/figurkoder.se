@@ -1,10 +1,10 @@
 import InitialState from '../initialState'
-import ActionTypes from '../actionTypes'
+import { ActionTypesSettings } from '../actionTypes'
 
 const SettingsReducer = (state, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
-    case ActionTypes.settings.SET_INTERVAL:
+    case ActionTypesSettings.SET_INTERVAL:
       newState.interval = +action.interval
       return newState
       break
