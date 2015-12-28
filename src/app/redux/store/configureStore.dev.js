@@ -7,9 +7,9 @@ import { persistState } from 'redux-devtools/lib'
 import DevTools from '../../components/devTools'
 
 const finaleCreateStore = compose (
-applyMiddleware(Thunk),
-DevTools.instrument(),
-persistState(getDebugSessionKey())
+  applyMiddleware(Thunk),
+  DevTools.instrument(),
+  persistState(getDebugSessionKey())
 )((createStore))
 
 function getDebugSessionKey() {
@@ -30,7 +30,3 @@ export default function configureStore(initialState) {
 
   return store
 }
-//
-// const store = finaleCreateStore(CombinedReducers, InitialState())
-//
-// export default store

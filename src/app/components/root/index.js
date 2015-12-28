@@ -1,6 +1,5 @@
-import Constants from '../constants'
+import Constants from '../../redux/constants'
 
-// if (process.argv.find((element) => element === '--production')) {
 if (Constants.PRODUCTION) {
   module.exports = require('./root.prod')
 } else {
