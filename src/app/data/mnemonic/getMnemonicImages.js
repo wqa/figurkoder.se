@@ -15,10 +15,10 @@ const GetMnemonicImages = ({
   } else {
     MnemonicHelper.checkRange(begin, end, arr.length)
   }
-  if (begin || end) {
-    let straightArray = MnemonicHelper.pushArray(begin, end + 1, arr)
-  }
-  if (!random) {
+
+  let straightArray = MnemonicHelper.pushArray(begin, end + 1, arr)
+
+  if ((begin || end) && !random) {
     return straightArray
   }
   if (random) {

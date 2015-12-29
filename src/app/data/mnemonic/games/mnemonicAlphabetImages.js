@@ -3,7 +3,7 @@ const MnemonicAlphabetImages = {
   description: 'Låt oss öva på lite bokstäver vetja! It be fun, they said...',
   start: 'A',
   stop: 'Ö',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     ["A", "Ark"],
     ["B", "Buddha"],

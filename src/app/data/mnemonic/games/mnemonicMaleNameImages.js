@@ -3,7 +3,7 @@ const MnemonicMaleNameImages = {
   description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
   start: 'Lars',
   stop: 'Filip',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     ["Lars", "Garagedörr"], // Larv
     ["Karl", "Karl-Johansvamp"],

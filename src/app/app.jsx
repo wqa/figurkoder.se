@@ -7,7 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import Root from './components/root'
 import configureStore from './redux/store'
 
-import InitialState from './redux/initialState'
+import InitialState from './redux/store/initialState'
 
 const Store = configureStore(InitialState())
 

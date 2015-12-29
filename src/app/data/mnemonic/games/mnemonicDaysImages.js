@@ -3,7 +3,7 @@ const MnemonicDaysImages = {
   description: 'Låt oss öva på lite veckodagar vetja! It be fun, they said...',
   start: 'Måndag',
   stop: 'Söndag',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     ["MåNdag", "MoNitor"],
     ["TiSdag", "TiStel"],

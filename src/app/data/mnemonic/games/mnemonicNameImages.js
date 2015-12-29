@@ -6,7 +6,7 @@ const MnemonicNameImages = {
   description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
   start: 'Anna',
   stop: 'Filip',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     ...MnemonicFemaleNameImages.data,
     ...MnemonicMaleNameImages.data,

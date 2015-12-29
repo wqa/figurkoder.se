@@ -2,13 +2,14 @@ const InitialState = () => {
 	return {
 		game: {
 			data: [],
+			currentPair: 0,
 			hidden: true,
-			status: "stop",
+			status: 'stop',
 			result: [],
 		},
 		settings: {
-			start: 0,
-			stop: 9,
+			begin: 0,
+			end: 9,
 			interval: 6,
 			practice: false,
 		},

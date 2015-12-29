@@ -3,7 +3,7 @@ const MnemonicNumberImages = {
   description: 'Låt oss öva på lite siffror vetja! It be fun, they said...',
   start: '00',
   stop: '99',
-  option: 'textbox',
+  dropdown: false,
   data: [
     [ "00"  , "Mask" ],
     [ "01"  , "Näsa" ],

@@ -3,7 +3,7 @@ const MnemonicFemaleNameImages = {
   description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
   start: 'Anna',
   stop: 'Jessica',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     ["Anna", "Ananasring"],
     ["Eva", "Vev (veva)"],

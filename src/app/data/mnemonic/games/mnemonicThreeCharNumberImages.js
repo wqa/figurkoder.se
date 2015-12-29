@@ -3,7 +3,7 @@ const MnemonicThreeCharNumberImages = {
   description: 'Låt oss öva på lite siffror vetja! It be fun, they said...',
   start: '000',
   stop: '999',
-  option: 'textbox',
+  dropdown: false,
   data: [
     ["000", "3 Mässingsringar"],
     ["001", "aMMuNition"],

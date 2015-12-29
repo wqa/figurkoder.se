@@ -8,6 +8,11 @@ const GlobalStyles = {
         paddingBottom: '0',
       },
   },
+  settings: {
+    textfield: {
+      paddingBottom: '0',
+    },
+  },
 }
 
 export default GlobalStyles

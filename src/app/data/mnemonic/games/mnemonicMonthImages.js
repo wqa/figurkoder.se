@@ -3,7 +3,7 @@ const MnemonicMonthImages = {
   description: 'Låt oss öva på lite månaderna vetja! It be fun, they said...',
   start: 'Januari',
   stop: 'December',
-  option: 'dropdown',
+  dropdown: true,
   data: [
     [ "Januari", "Nyårssmällare" ],
     [ "Februari", "Hjärta" ],

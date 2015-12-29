@@ -1,25 +1,11 @@
 import React, { PropTypes } from 'react'
 import { Textfield } from 'react-mdl'
 import { connect } from 'react-redux'
-import Actions from '../../../../redux/actions'
-
-const styles = {
-  Textfield: {
-    paddingBottom: '10px',
-  },
-}
+import Actions from '../../../../redux/actions/'
 
 class TimeInput extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      time: this.props.interval,
-    }
-  }
-
   onTimeChange(e) {
     this.props.setInterval(e.target.value)
-    this.setState({time: e.target.value})
   }
 
   render(){
@@ -31,8 +17,8 @@ class TimeInput extends React.Component {
       error="Input is not a number!"
       label="Tid (sekunder):"
       floatingLabel
-      value={this.state.time}
-      style={styles.Textfield}
+      value={this.props.interval}
+      style={this.props.style}
       />
     )
   }
@@ -41,15 +27,14 @@ class TimeInput extends React.Component {
 TimeInput.propTypes = {
   interval: PropTypes.number.isRequired,
   setInterval: PropTypes.func.isRequired,
+  style: PropTypes.object,
 }
 
 const mapStateToProps = (state) => state.settings
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setInterval(newInterval) {
-      dispatch(Actions.setInterval(newInterval))
-    },
+    setInterval: (newInterval) => { dispatch(Actions.setInterval(newInterval)) },
   }
 }
 

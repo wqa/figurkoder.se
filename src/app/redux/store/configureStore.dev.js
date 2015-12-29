@@ -1,13 +1,13 @@
 import { createStore, compose, applyMiddleware } from 'redux'
-import CombinedReducers from '../reducers/combinedReducers'
-import Thunk from 'redux-thunk'
+import CombinedReducers from './reducers/combinedReducers'
+import thunk from 'redux-thunk'
 
 // Redux DevTools store enhancers
 import { persistState } from 'redux-devtools/lib'
 import DevTools from '../../components/devTools'
 
 const finaleCreateStore = compose (
-  applyMiddleware(Thunk),
+  applyMiddleware(thunk),
   DevTools.instrument(),
   persistState(getDebugSessionKey())
 )((createStore))

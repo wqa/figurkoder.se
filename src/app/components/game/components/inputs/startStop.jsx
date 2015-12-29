@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Icon, FABButton } from 'react-mdl'
+import { connect } from 'react-redux'
+import Actions from '../../../../redux/actions/'
 
 const styles = {
   div: {
@@ -17,29 +19,26 @@ const styles = {
 
 class StartStop extends React.Component {
   start() {
-    console.log("Start!")
+    this.props.startGame(this.props.type)
   }
-
   pause() {
-    console.log("Pause!")
+    this.props.pauseGame()
   }
-
   stop() {
-    console.log("Stop!")
+    this.props.stopGame()
   }
-
   render() {
     return (
         <div style={styles.div}>
-          <FABButton ripple onClick={this.start}
+          <FABButton ripple onClick={this.start.bind(this)}
             style={styles.FABButton}>
             <Icon name="play_arrow" />
           </FABButton>
-          <FABButton ripple onClick={this.pause}
+          <FABButton ripple onClick={this.pause.bind(this)}
             style={styles.FABButton}>
             <Icon name="pause" />
           </FABButton>
-          <FABButton ripple onClick={this.stop}
+          <FABButton ripple onClick={this.stop.bind(this)}
             style={styles.FABButton}>
             <Icon name="stop" />
           </FABButton>
@@ -48,4 +47,21 @@ class StartStop extends React.Component {
   }
 }
 
-export default StartStop
+StartStop.propTypes = {
+  status: PropTypes.string.isRequired,
+  startGame: PropTypes.func.isRequired,
+  pauseGame: PropTypes.func.isRequired,
+  stopGame: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state) => state.game
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    startGame: (type) => { dispatch(Actions.startGame(type)) },
+    pauseGame: () => { dispatch(Actions.pauseGame()) },
+    stopGame: () => { dispatch(Actions.stopGame()) },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StartStop)

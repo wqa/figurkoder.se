@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
 const styles = {
   select: {
@@ -15,7 +15,7 @@ const styles = {
 
 class DropdownInput extends React.Component {
   onMenuChange(e){
-    console.log(e.target.value)
+    this.props.action(e.target.value)
   }
 
   render() {
@@ -27,13 +27,17 @@ class DropdownInput extends React.Component {
           { this.props.description }
         </option>
         {this.props.options.map((option, key) => (
-          <option value={key} >
+          <option value={key} key={key} >
             {option}
           </option>
         ))}
       </select>
     )
   }
+}
+
+DropdownInput.propTypes = {
+  action: PropTypes.func.isRequired,
 }
 
 export default DropdownInput

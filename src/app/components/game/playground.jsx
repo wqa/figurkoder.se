@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Button, Grid, Cell, Icon, FABButton } from 'react-mdl'
 import Presentation from './components/presentation'
+import { connect } from 'react-redux'
+import Actions from '../../redux/actions/'
 
 const styles = {
   div: {
@@ -18,11 +20,11 @@ const styles = {
 
 class Playground extends React.Component {
   show() {
-    console.log("Show!")
+    this.props.show()
   }
 
   next() {
-    console.log("Next!")
+    this.props.next()
   }
 
   render() {
@@ -31,12 +33,24 @@ class Playground extends React.Component {
         <Presentation value={this.props.mnemomicImage} />
         <Presentation value={isNaN(this.props.countdown) ? this.props.countdown : this.props.countdown + '...'} />
         <div style={styles.div.nested}>
-          <Button onClick={this.show} ripple raised>Visa <Icon name="done" /></Button>
-          <Button onClick={this.next} ripple raised>Nästa <Icon name="skip_next" /></Button>
+          <Button onClick={this.show.bind(this)} ripple raised>Visa <Icon name="done" /></Button>
+          <Button onClick={this.next.bind(this)} ripple raised>Nästa <Icon name="skip_next" /></Button>
         </div>
       </div>
     )
   }
 }
 
-export default Playground
+Playground.propTypes = {
+  next: PropTypes.func.isRequired,
+  show: PropTypes.func.isRequired,
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    next: () => { dispatch(Actions.next()) },
+    show: () => { dispatch(Actions.show()) },
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Playground)
