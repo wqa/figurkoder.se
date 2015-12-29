@@ -3,8 +3,7 @@ import CombinedReducers from './reducers/combinedReducers'
 import thunk from 'redux-thunk'
 
 const finaleCreateStore = compose (
-  applyMiddleware(thunk),
-  persistState(getDebugSessionKey())
+  applyMiddleware(thunk)
 )((createStore))
 
 export default function configureStore(initialState) {
