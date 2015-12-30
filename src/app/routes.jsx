@@ -11,7 +11,7 @@ export default (
   <Route path="/" component={Master}>
     <IndexRoute component={StartPage} />
     <Route path="/game/:game" component={Game}/>
-    <Route path="/result" component={Result}/>
+    <Route path="/result/:game" component={Result}/>
     <Route path="*" component={NoMatch}/>
   </Route>
 )

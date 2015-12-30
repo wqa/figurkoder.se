@@ -1,27 +1,25 @@
 import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+import Actions from '../redux/actions/'
 import InGameHeader from './shared/inGameHeader'
 import ResultTable from './result/resultTable'
 
 const Result = (props) => {
-  let { url } = props
-
-  let results = [
-                ['02', 1.2],
-                ['01', "Näsa"],
-                ['04', 2.3],
-                ['03', 0.5],
-              ]
+  const {result} = props
+  const url = props.params.game
 
   return(
     <div>
-      <InGameHeader title="Siffror" url={url} />
-      <ResultTable results={results} />
+      <InGameHeader title="Siffror" url={'/game/' + url} />
+      <ResultTable results={result} />
     </div>
   )
 }
 
 Result.propTypes = {
-    url: PropTypes.string.isRequired,
+  result: PropTypes.array.isRequired,
 }
 
-export default Result
+const mapStateToProps = (state) => state.game
+
+export default connect(mapStateToProps, null)(Result)
