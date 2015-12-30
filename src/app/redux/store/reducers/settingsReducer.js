@@ -2,26 +2,33 @@ import InitialState from '../initialState'
 import { ActionTypesSettings } from '../../actions/actionTypes'
 
 const SettingsReducer = (state, action) => {
-  const newState = Object.assign({}, state)
   switch (action.type) {
     case ActionTypesSettings.RESET:
       return InitialState().settings
       break
     case ActionTypesSettings.SET_INTERVAL:
-      newState.interval = +action.interval
-      return newState
+      return {
+        ...state,
+        interval: +action.interval,
+      }
       break
     case ActionTypesSettings.SET_BEGIN:
-      newState.begin = +action.begin
-      return newState
+      return {
+        ...state,
+        begin: +action.begin,
+      }
       break
     case ActionTypesSettings.SET_END:
-      newState.end = +action.end
-      return newState
+      return {
+        ...state,
+        end: +action.end,
+      }
       break
     case ActionTypesSettings.SET_PRACTICE:
-      newState.practice = action.practice
-      return newState
+      return {
+        ...state,
+        practice: action.practice,
+      }
       break
     default:
       return state || InitialState().settings

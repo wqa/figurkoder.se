@@ -2,10 +2,12 @@ const InitialState = () => {
 	return {
 		game: {
 			data: [],
+			result: [],
+			timestamp: 0,
+			elapsedTime: 0,
 			currentPair: 0,
 			hidden: true,
 			status: 'stop',
-			result: [],
 		},
 		settings: {
 			begin: 0,
