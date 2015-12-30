@@ -30,16 +30,22 @@ class StartStop extends React.Component {
   render() {
     return (
         <div style={styles.div}>
-          <FABButton ripple onClick={this.start.bind(this)}
-            style={styles.FABButton}>
+          <FABButton ripple
+            onClick={this.start.bind(this)}
+            style={styles.FABButton}
+            disabled={this.props.status === 'start'}>
             <Icon name="play_arrow" />
           </FABButton>
-          <FABButton ripple onClick={this.pause.bind(this)}
-            style={styles.FABButton}>
+          <FABButton ripple
+            onClick={this.pause.bind(this)}
+            style={styles.FABButton}
+            disabled={this.props.status === 'pause'}>
             <Icon name="pause" />
           </FABButton>
-          <FABButton ripple onClick={this.stop.bind(this)}
-            style={styles.FABButton}>
+          <FABButton ripple
+            onClick={this.stop.bind(this)}
+            style={styles.FABButton}
+            disabled={this.props.status === 'stop'}>
             <Icon name="stop" />
           </FABButton>
         </div>

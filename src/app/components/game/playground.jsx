@@ -28,13 +28,24 @@ class Playground extends React.Component {
   }
 
   render() {
+    const {mnemomicImage, countdown, hidden} = this.props
+
     return (
       <div style={styles.div.main}>
-        <Presentation value={this.props.mnemomicImage} />
-        <Presentation value={isNaN(this.props.countdown) ? this.props.countdown : this.props.countdown + '...'} />
+        <Presentation value={mnemomicImage} />
+        <Presentation value={isNaN(countdown) ? countdown : countdown + '...'} />
         <div style={styles.div.nested}>
-          <Button onClick={this.show.bind(this)} ripple raised>Visa <Icon name="done" /></Button>
-          <Button onClick={this.next.bind(this)} ripple raised>Nästa <Icon name="skip_next" /></Button>
+          <Button
+            onClick={this.show.bind(this)}
+            disabled={!hidden}
+            ripple
+            raised
+            >Visa <Icon name="done" /></Button>
+          <Button
+            onClick={this.next.bind(this)}
+            ripple
+            raised
+            >Nästa <Icon name="skip_next" /></Button>
         </div>
       </div>
     )
@@ -42,9 +53,12 @@ class Playground extends React.Component {
 }
 
 Playground.propTypes = {
+  hidden: PropTypes.bool.isRequired,
   next: PropTypes.func.isRequired,
   show: PropTypes.func.isRequired,
 }
+
+const mapStateToProps = (state) => state.game
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -53,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Playground)
+export default connect(mapStateToProps, mapDispatchToProps)(Playground)
