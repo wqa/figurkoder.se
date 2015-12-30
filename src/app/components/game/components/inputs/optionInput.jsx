@@ -13,6 +13,7 @@ class OptionInput extends React.Component {
           ripple
           id="practice"
           onChange={this.onSwitch.bind(this)}
+          disabled={this.props.status !== 'stop'}
           >Inlärning?</Switch>
     )
   }
@@ -20,10 +21,16 @@ class OptionInput extends React.Component {
 
 OptionInput.propTypes = {
   practice: PropTypes.bool.isRequired,
+  status: PropTypes.string.isRequired,
   setPractice: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = (state) => state.settings
+const mapStateToProps = (state) => {
+  return {
+    practice: state.settings.practice,
+    status: state.game.status,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

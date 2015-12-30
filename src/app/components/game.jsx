@@ -16,17 +16,17 @@ class Game extends React.Component{
 
   render() {
     const props = this.props, GameObject = Games[props.params.game],
-    Type = props.params.game, currentPair = props.currentPair, data = props.data
-
+    type = props.params.game, currentPair = props.currentPair, data = props.data
+    
     return(
       <div>
         <InGameHeader title={GameObject.title} />
         <Description description={GameObject.description} />
         <Playground
-          mnemomicImage={data ? GetMnemonicImages({begin: 0, end: 0, type: Type})[0][0] : data[currentPair][0]}
-          countdown={data ? GetMnemonicImages({begin: 0, end: 0, type: Type})[0][1] : data[currentPair][1]} />
+          mnemomicImage={data.length ? data[currentPair][0] : GetMnemonicImages({begin: 0, end: 0, type: type})[0][0]}
+          mnemomicAnswer={data.length ? data[currentPair][1] : GetMnemonicImages({begin: 0, end: 0, type: type})[0][1]} />
           <GameOptions
-            type={Type}
+            type={type}
             data={GameObject.data}
             dropdown={GameObject.dropdown} />
       </div>

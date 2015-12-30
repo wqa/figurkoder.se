@@ -5,6 +5,7 @@ const InitialState = () => {
 			result: [],
 			timestamp: 0,
 			elapsedTime: 0,
+			countdown: 5,
 			currentPair: 0,
 			hidden: true,
 			status: 'stop',

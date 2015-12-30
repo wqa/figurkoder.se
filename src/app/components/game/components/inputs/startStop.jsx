@@ -39,7 +39,7 @@ class StartStop extends React.Component {
           <FABButton ripple
             onClick={this.pause.bind(this)}
             style={styles.FABButton}
-            disabled={this.props.status === 'pause'}>
+            disabled={this.props.status !== 'start'}>
             <Icon name="pause" />
           </FABButton>
           <FABButton ripple

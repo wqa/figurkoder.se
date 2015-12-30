@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { Textfield } from 'react-mdl'
 
 const TextInput = (props) => {
-  const {action, value, style, max, label} = props
+  const {action, value, style, max, label, disabled} = props
 
   return (
     <Textfield
@@ -15,6 +15,7 @@ const TextInput = (props) => {
       floatingLabel
       value={value}
       style={style}
+      disabled={disabled}
     />
   )
 }
@@ -25,6 +26,7 @@ TextInput.propTypes = {
   style: PropTypes.object.isRequired,
   max: PropTypes.number.isRequired,
   action: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 }
 
 export default TextInput

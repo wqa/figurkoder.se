@@ -28,21 +28,24 @@ class Playground extends React.Component {
   }
 
   render() {
-    const {mnemomicImage, countdown, hidden} = this.props
+    const {mnemomicImage, mnemomicAnswer, countdown, hidden, status} = this.props
+
+    const answer = hidden ? countdown : mnemomicAnswer
 
     return (
       <div style={styles.div.main}>
         <Presentation value={mnemomicImage} />
-        <Presentation value={isNaN(countdown) ? countdown : countdown + '...'} />
+        <Presentation value={isNaN(answer) ? answer : answer + '...'} />
         <div style={styles.div.nested}>
           <Button
             onClick={this.show.bind(this)}
-            disabled={!hidden}
+            disabled={!hidden || status === 'stop'}
             ripple
             raised
             >Visa <Icon name="done" /></Button>
           <Button
             onClick={this.next.bind(this)}
+            disabled={status === 'stop'}
             ripple
             raised
             >Nästa <Icon name="skip_next" /></Button>
@@ -53,6 +56,8 @@ class Playground extends React.Component {
 }
 
 Playground.propTypes = {
+  countdown: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
   hidden: PropTypes.bool.isRequired,
   next: PropTypes.func.isRequired,
   show: PropTypes.func.isRequired,

@@ -28,7 +28,7 @@ class GameOptions extends React.Component {
   }
 
   render() {
-    const { setBegin, setEnd, type, dropdown } = this.props
+    const { setBegin, setEnd, type, dropdown, status } = this.props
 
     if(dropdown) {
       let options = []
@@ -43,13 +43,15 @@ class GameOptions extends React.Component {
               <DropdownInput
                 description="Från"
                 options={options}
-                action={setBegin} />
+                action={setBegin}
+                disabled={status !== 'stop'} />
             </GameOptionCell>
             <GameOptionCell>
               <DropdownInput
                 description="Till"
                 options={options}
-                action={setEnd} />
+                action={setEnd}
+                disabled={status !== 'stop'} />
             </GameOptionCell>
             <GameOptionCell>
               <TimeInput
@@ -72,7 +74,8 @@ class GameOptions extends React.Component {
                 value={this.props.begin}
                 style={GlobalStyles.settings.textfield}
                 max={this.props.data.length - 1}
-                action={this.onStartChange.bind(this)} />
+                action={this.onStartChange.bind(this)}
+                disabled={status !== 'stop'} />
             </GameOptionCell>
             <GameOptionCell>
               <TextInput
@@ -80,7 +83,8 @@ class GameOptions extends React.Component {
                 value={this.props.end}
                 style={GlobalStyles.settings.textfield}
                 max={this.props.data.length - 1}
-                action={this.onStopChange.bind(this)} />
+                action={this.onStopChange.bind(this)}
+                disabled={status !== 'stop'} />
             </GameOptionCell>
             <GameOptionCell>
               <TimeInput
@@ -112,7 +116,14 @@ GameOptions.defaultProps = {
   add: 9,
 }
 
-const mapStateToProps = (state) => state.settings
+const mapStateToProps = (state) => {
+  return {
+    begin: state.settings.begin,
+    end: state.settings.end,
+    add: state.settings.add,
+    status: state.game.status,
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {

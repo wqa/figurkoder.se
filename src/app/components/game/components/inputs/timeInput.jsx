@@ -11,14 +11,16 @@ class TimeInput extends React.Component {
   render(){
     return (
     <Textfield
+      min="1" max="30"
       type="number"
       onChange={this.onTimeChange.bind(this)}
       pattern="-?[0-9]*(\.[0-9]+)?"
-      error="Input is not a number!"
+      error="Välj mellan 1-30!"
       label="Tid (sekunder):"
       floatingLabel
       value={this.props.interval}
       style={this.props.style}
+      disabled={this.props.status !== 'stop'}
       />
     )
   }
@@ -26,11 +28,15 @@ class TimeInput extends React.Component {
 
 TimeInput.propTypes = {
   interval: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
   setInterval: PropTypes.func.isRequired,
   style: PropTypes.object,
 }
 
-const mapStateToProps = (state) => state.settings
+const mapStateToProps = (state) => {return {
+  interval: state.settings.interval,
+  status: state.game.status,
+}}
 
 const mapDispatchToProps = (dispatch) => {
   return {

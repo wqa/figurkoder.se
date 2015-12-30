@@ -22,7 +22,8 @@ class DropdownInput extends React.Component {
     return (
       <select style={styles.select}
         defaultValue={-1}
-        onChange={this.onMenuChange.bind(this)} >
+        onChange={this.onMenuChange.bind(this)}
+        disabled={this.props.disabled} >
         <option disabled value={-1}>
           { this.props.description }
         </option>
@@ -38,6 +39,7 @@ class DropdownInput extends React.Component {
 
 DropdownInput.propTypes = {
   action: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 }
 
 export default DropdownInput
