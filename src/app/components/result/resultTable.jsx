@@ -10,16 +10,20 @@ const styles = {
 const ResultTable = (props) => {
   const { results } = props
 
-  const presentation = results.map((item, key) => ({
-    mnemomicImage: item[0], time: !isNaN(item[1]) ? item[1].toString().length === 1 ? item[1].toString() + '.0 sek' : item[1].toString().slice(0, 3) + ' sek' : item[1],
-  }))
-
   const isNotANumber = (item) => {
     if (typeof item === 'object')
       return !isNaN(item[1])
     else
       return !isNaN(item)
   }
+
+  const formatSec = (time) => (
+    time.toString().length === 1 ? time.toString() + '.0 sek' : time.toString().slice(0, 3) + ' sek'
+  )
+
+  const presentation = results.map((item, key) => ({
+    mnemomicImage: item[0], time: !isNaN(item[1]) ? formatSec(item[1]) : item[1],
+  }))
 
   const length = results
     .filter(isNotANumber)
@@ -36,7 +40,7 @@ const ResultTable = (props) => {
 
   presentation.push({
     mnemomicImage: 'Genomsnittlig tid: ',
-    time: avarage.toString().length === 1 ? avarage.toString() + '.0 sek' : avarage.toString().slice(0, 3) + ' sek',
+    time: formatSec(avarage),
   })
 
   return(

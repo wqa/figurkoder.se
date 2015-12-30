@@ -1,18 +1,29 @@
 import ActionTypes from "./actionTypes"
 import GetMnemonicImages from '../../data/mnemonic/getMnemonicImages'
 
+const {
+	RESET,
+	SET_INTERVAL,
+	SET_PRACTICE,
+	START_GAME,
+	STOP_GAME,
+	PAUSE_GAME,
+	SHOW,
+	NEXT,
+} = ActionTypes
+
 const GameActions = {
 	reset: () => {
 		return (dispatch, getState) => {
       dispatch({
-        type: ActionTypes.RESET,
+        type: RESET,
       })
 		}
 	},
 	setInterval: (interval) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_INTERVAL,
+				type: SET_INTERVAL,
 				interval: interval,
       })
 		}
@@ -20,7 +31,7 @@ const GameActions = {
 	setPractice: (practice) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_PRACTICE,
+				type: SET_PRACTICE,
 				hidden: practice,
       })
 		}
@@ -35,7 +46,7 @@ const GameActions = {
 				random: !getState().settings.practice,
 			})
       dispatch({
-				type: ActionTypes.START_GAME,
+				type: START_GAME,
 				status: 'start',
 				data: newData,
 				timestamp: +newTimestamp,
@@ -45,7 +56,7 @@ const GameActions = {
 	stopGame: () => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.STOP_GAME,
+				type: STOP_GAME,
 				status: 'stop',
       })
 		}
@@ -59,7 +70,7 @@ const GameActions = {
 			// console.log(pauseTimestamp)
 
       dispatch({
-				type: ActionTypes.PAUSE_GAME,
+				type: PAUSE_GAME,
 				elapsedTime: +newElapsedTime,
       })
 		}
@@ -68,12 +79,12 @@ const GameActions = {
 		return (dispatch, getState) => {
       if(getState().game.hidden) {
         dispatch({
-          type: ActionTypes.SHOW,
+          type: SHOW,
           hidden: false,
         })
       } else {
         dispatch({
-  				type: ActionTypes.SHOW,
+  				type: SHOW,
           hidden: true,
         })
       }
@@ -86,7 +97,7 @@ const GameActions = {
 			const newElapsedTime = getState().game.status === 'pause' ? +getState().game.elapsedTime : +getState().game.elapsedTime + (+nextTimestamp - +getState().game.timestamp)
 
       dispatch({
-				type: ActionTypes.NEXT,
+				type: NEXT,
         hidden: !getState().settings.practice,
 				newPair: newPair,
 				status: 'start',

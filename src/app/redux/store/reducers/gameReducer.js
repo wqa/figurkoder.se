@@ -1,24 +1,34 @@
 import InitialState from '../initialState'
 import { ActionTypesGame } from '../../actions/actionTypes'
 
+const {
+  SET_INTERVAL,
+  SET_PRACTICE,
+  START_GAME,
+  PAUSE_GAME,
+  STOP_GAME,
+  SHOW,
+  NEXT,
+} = ActionTypesGame
+
 const GameReducer = (state, action) => {
   switch (action.type) {
     case ActionTypesGame.RESET:
       return InitialState().game
       break
-    case ActionTypesGame.SET_INTERVAL:
+    case SET_INTERVAL:
       return {
         ...state,
         countdown: +action.interval - 1,
       }
       break
-    case ActionTypesGame.SET_PRACTICE:
+    case SET_PRACTICE:
       return {
         ...state,
         hidden: !action.practice,
       }
       break
-    case ActionTypesGame.START_GAME:
+    case START_GAME:
       return {
         ...state,
         status: action.status,
@@ -26,7 +36,7 @@ const GameReducer = (state, action) => {
         timestamp: +action.timestamp,
       }
       break
-    case ActionTypesGame.PAUSE_GAME:
+    case PAUSE_GAME:
       return {
         ...state,
         status: 'pause',
@@ -34,7 +44,7 @@ const GameReducer = (state, action) => {
         elapsedTime: +action.elapsedTime,
       }
       break
-    case ActionTypesGame.STOP_GAME:
+    case STOP_GAME:
       return {
         ...state,
         status: action.status,
@@ -42,14 +52,14 @@ const GameReducer = (state, action) => {
         elapsedTime: 0,
       }
       break
-    case ActionTypesGame.SHOW:
+    case SHOW:
       return {
         ...state,
         status: 'pause',
         hidden: action.hidden,
       }
       break
-    case ActionTypesGame.NEXT:
+    case NEXT:
       const newResult = [...state.result]
       newResult[state.currentPair] = [state.data[state.currentPair][0], state.hidden ? +action.elapsedTime / 1000 : state.data[state.currentPair][1]]
 

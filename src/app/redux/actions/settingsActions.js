@@ -1,17 +1,25 @@
 import ActionTypes from "./actionTypes"
 
+const {
+	RESET,
+	SET_INTERVAL,
+	SET_BEGIN,
+	SET_END,
+	SET_PRACTICE,
+} = ActionTypes
+
 const SettingsActions = {
 	reset: () => {
 		return (dispatch, getState) => {
       dispatch({
-        type: ActionTypes.RESET,
+        type: RESET,
       })
 		}
 	},
 	setInterval: (interval) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_INTERVAL,
+				type: SET_INTERVAL,
 				interval: interval,
       })
 		}
@@ -19,7 +27,7 @@ const SettingsActions = {
 	setBegin: (begin) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_BEGIN,
+				type: SET_BEGIN,
 				begin: begin,
       })
 		}
@@ -27,7 +35,7 @@ const SettingsActions = {
 	setEnd: (end) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_END,
+				type: SET_END,
 				end: end,
       })
 		}
@@ -35,7 +43,7 @@ const SettingsActions = {
 	setPractice: (practice) => {
 		return (dispatch, getState) => {
       dispatch({
-				type: ActionTypes.SET_PRACTICE,
+				type: SET_PRACTICE,
 				practice: practice,
       })
 		}

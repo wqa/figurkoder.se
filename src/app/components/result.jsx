@@ -10,7 +10,7 @@ const Result = (props) => {
 
   return(
     <div>
-      <InGameHeader title="Siffror" url={'/game/' + url} />
+      <InGameHeader title="Siffror" url={'game/' + url} />
       <ResultTable results={result} />
     </div>
   )
