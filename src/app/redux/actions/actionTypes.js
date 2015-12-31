@@ -1,4 +1,5 @@
 export const ActionTypesGame = {
+  RESET: 'RESET',
   START_GAME: 'START_GAME',
   PAUSE_GAME: 'PAUSE_GAME',
   STOP_GAME: 'STOP_GAME',

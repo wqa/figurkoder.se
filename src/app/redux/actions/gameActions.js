@@ -13,7 +13,7 @@ const {
 } = ActionTypes
 
 const GameActions = {
-	reset: () => {
+	resetGame: () => {
 		return (dispatch, getState) => {
       dispatch({
         type: RESET,
@@ -65,10 +65,7 @@ const GameActions = {
 		return (dispatch, getState) => {
 			const pauseTimestamp = new Date().getTime()
 			const newElapsedTime = +getState().game.elapsedTime + (+pauseTimestamp - +getState().game.timestamp)
-
-			console.log(newElapsedTime)
-			// console.log(pauseTimestamp)
-
+			
       dispatch({
 				type: PAUSE_GAME,
 				elapsedTime: +newElapsedTime,

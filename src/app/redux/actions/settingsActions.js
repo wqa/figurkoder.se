@@ -9,7 +9,7 @@ const {
 } = ActionTypes
 
 const SettingsActions = {
-	reset: () => {
+	resetSettings: () => {
 		return (dispatch, getState) => {
       dispatch({
         type: RESET,

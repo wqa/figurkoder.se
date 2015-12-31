@@ -45,7 +45,7 @@ const mapStateToProps = (state) => state.game
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    reset: () => { dispatch(Actions.reset()) },
+    reset: () => { dispatch(Actions.resetGame()) },
   }
 }
 
