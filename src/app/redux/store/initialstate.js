@@ -9,6 +9,7 @@ const InitialState = () => {
 			currentPair: 0,
 			hidden: true,
 			status: 'stop',
+			hasBeenPaused: false,
 		},
 		settings: {
 			begin: 0,

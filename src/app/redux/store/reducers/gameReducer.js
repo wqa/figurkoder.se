@@ -32,8 +32,8 @@ const GameReducer = (state, action) => {
     case START_GAME:
       return {
         ...state,
-        status: action.status,
-        data: action.data,
+        status: 'start',
+        data: action.data || state.data,
         timestamp: +action.timestamp,
       }
       break
@@ -43,14 +43,17 @@ const GameReducer = (state, action) => {
         status: 'pause',
         timestamp: 0,
         elapsedTime: +action.elapsedTime,
+        hasBeenPaused: true,
       }
       break
     case STOP_GAME:
       return {
         ...state,
-        status: action.status,
+				status: 'stop',
         currentPair: 0,
         elapsedTime: 0,
+        timestamp: 0,
+        data: [],
       }
       break
     case SHOW:
@@ -68,10 +71,11 @@ const GameReducer = (state, action) => {
         ...state,
         hidden: action.hidden,
         currentPair: +action.newPair,
-        status: action.status,
-        timestamp: +action.timestamp,
+        status: 'start',
+        timestamp: +action.timestamp || 0,
         elapsedTime: 0,
         result: newResult,
+        hasBeenPaused: false,
       }
       break
     default:

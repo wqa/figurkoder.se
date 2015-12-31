@@ -20,6 +20,7 @@ const styles = {
 class StartStop extends React.Component {
   start() {
     this.props.startGame(this.props.type)
+    this.props.next(this.props.type, true)
   }
   pause() {
     this.props.pauseGame()
@@ -67,6 +68,7 @@ const mapDispatchToProps = (dispatch) => {
     startGame: (type) => { dispatch(Actions.startGame(type)) },
     pauseGame: () => { dispatch(Actions.pauseGame()) },
     stopGame: () => { dispatch(Actions.stopGame()) },
+    next: (path, auto) => { dispatch(Actions.next(path, auto)) },
   }
 }
 

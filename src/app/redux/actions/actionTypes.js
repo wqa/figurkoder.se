@@ -11,6 +11,7 @@ export const ActionTypesGame = {
 
 export const ActionTypesSettings = {
   RESET: 'RESET',
+  STOP_GAME: 'STOP_GAME',
   SET_INTERVAL: 'SET_INTERVAL',
   SET_BEGIN: 'SET_BEGIN',
   SET_END: 'SET_END',

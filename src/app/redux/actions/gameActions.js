@@ -12,8 +12,13 @@ const {
 	NEXT,
 } = ActionTypes
 
+let timer
+
 const GameActions = {
 	resetGame: () => {
+		if (timer) {
+			clearTimeout(timer)
+		}
 		return (dispatch, getState) => {
       dispatch({
         type: RESET,
@@ -39,33 +44,45 @@ const GameActions = {
 	startGame: (type) => {
 		return (dispatch, getState) => {
 			const newTimestamp = new Date().getTime()
-			const newData = GetMnemonicImages({
-				begin: getState().settings.begin,
-				end: getState().settings.end,
-				type: type,
-				random: !getState().settings.practice,
-			})
-      dispatch({
-				type: START_GAME,
-				status: 'start',
-				data: newData,
-				timestamp: +newTimestamp,
-      })
+      if (getState().game.data.length === 0) {
+				const newData = GetMnemonicImages({
+					begin: getState().settings.begin,
+					end: getState().settings.end,
+					type: type,
+					random: !getState().settings.practice,
+				})
+				dispatch({
+					type: START_GAME,
+					data: newData,
+					timestamp: +newTimestamp,
+	      })
+			} else {
+				dispatch({
+					type: START_GAME,
+					timestamp: +newTimestamp,
+	      })
+			}
 		}
 	},
 	stopGame: () => {
 		return (dispatch, getState) => {
+			if (timer) {
+				clearTimeout(timer)
+			}
       dispatch({
 				type: STOP_GAME,
-				status: 'stop',
       })
 		}
 	},
 	pauseGame: () => {
 		return (dispatch, getState) => {
+			if (timer) {
+				clearTimeout(timer)
+			}
+
 			const pauseTimestamp = new Date().getTime()
 			const newElapsedTime = +getState().game.elapsedTime + (+pauseTimestamp - +getState().game.timestamp)
-			
+
       dispatch({
 				type: PAUSE_GAME,
 				elapsedTime: +newElapsedTime,
@@ -87,34 +104,63 @@ const GameActions = {
       }
 		}
 	},
-  next: (path) => {
+  next: (path, auto) => {
 		return (dispatch, getState) => {
-			const newPair = +getState().game.currentPair < +getState().game.data.length - 1 ? +getState().game.currentPair + 1 : 0
-			const nextTimestamp = new Date().getTime()
-			const newElapsedTime = getState().game.status === 'pause' ? +getState().game.elapsedTime : +getState().game.elapsedTime + (+nextTimestamp - +getState().game.timestamp)
+			clearTimeout(timer)
 
-			const actionObject = {
-				type: NEXT,
-				hidden: !getState().settings.practice,
-				newPair: newPair,
-				status: 'start',
-				timestamp: +nextTimestamp,
-				elapsedTime: +newElapsedTime,
+			const getElapsedTime = (status, paused, elapsedTime, timestamp) => {
+				if (status === 'pause') {
+					return +elapsedTime
+				} else {
+					return paused === true ? +elapsedTime : +elapsedTime + ((new Date().getTime()) - +timestamp)
+				}
+			}
+			const getInterval = +getState().settings.interval * 1000
+			const elapsedTime = getElapsedTime(getState().game.status, getState().game.hasBeenPaused, +getState().game.elapsedTime, +getState().game.timestamp)
+			const timeout = !getState().game.hasBeenPaused ? getInterval : getInterval - +elapsedTime
+
+			const dispatchFunction = () => {
+				const timeout = !getState().game.hasBeenPaused ? getInterval : getInterval - +elapsedTime
+
+				if (getState().game.data.length === 0) {
+					clearTimeout(timer)
+					throw Error('No data')
+				}
+
+				const newPair = +getState().game.currentPair < +getState().game.data.length - 1 ? +getState().game.currentPair + 1 : 0
+				const nextTimestamp = new Date().getTime()
+				const newElapsedTime = getElapsedTime(getState().game.status, false, +getState().game.elapsedTime, +getState().game.timestamp)
+
+				const actionObject = {
+					type: NEXT,
+					hidden: !getState().settings.practice,
+					newPair: newPair,
+					elapsedTime: +newElapsedTime,
+				}
+
+				if(+getState().game.currentPair + 1 === +getState().game.data.length && !getState().settings.practice) {
+					clearTimeout(timer)
+					dispatch({
+						...actionObject,
+						meta: {
+							transition: (state, action) => ({
+		          	path: `/result/${path}`,
+			        }),
+						},
+					})
+				} else {
+		      dispatch({
+						...actionObject,
+						timestamp: +(new Date().getTime()),
+		      })
+					timer = setTimeout(() => dispatchFunction(), getInterval)
+				}
 			}
 
-			if(+getState().game.currentPair + 1 === +getState().game.data.length && !getState().settings.practice) {
-				dispatch({
-					...actionObject,
-					meta: {
-						transition: (state, action) => ({
-	          	path: `/result/${path}`,
-		        }),
-					},
-				})
+			if(auto) {
+				timer = setTimeout(() => dispatchFunction(), timeout)
 			} else {
-	      dispatch({
-					...actionObject,
-	      })
+				dispatchFunction()
 			}
 		}
 	},

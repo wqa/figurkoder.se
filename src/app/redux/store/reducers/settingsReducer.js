@@ -3,6 +3,7 @@ import { ActionTypesSettings } from '../../actions/actionTypes'
 
 const {
   RESET,
+  STOP_GAME,
   SET_INTERVAL,
   SET_BEGIN,
   SET_END,
@@ -14,6 +15,9 @@ const SettingsReducer = (state, action) => {
     case RESET:
       return InitialState().settings
       break
+    // case STOP_GAME:
+    //   return InitialState().settings
+    //   break
     case SET_INTERVAL:
       return {
         ...state,
