@@ -8,11 +8,11 @@ import routes from '../../routes'
 import { Provider } from 'react-redux'
 
 const Root = (props) => {
-  const { store } = props
+  const { store, history } = props
 
   return (
     <Provider store={ store }>
-      <Router routes={ routes } />
+      <Router routes={ routes } history={ history } />
     </Provider>
   )
 }

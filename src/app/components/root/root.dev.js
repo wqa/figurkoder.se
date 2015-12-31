@@ -5,12 +5,12 @@ import { Provider } from 'react-redux'
 import DevTools from '../devTools'
 
 const Root = (props) => {
-  const { store } = props
+  const { store, history } = props
 
   return (
     <Provider store={ store }>
       <div>
-        <Router routes={ routes } />
+        <Router routes={ routes } history={history} />
         <DevTools />
       </div>
     </Provider>

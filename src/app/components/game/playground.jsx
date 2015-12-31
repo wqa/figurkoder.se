@@ -23,12 +23,12 @@ class Playground extends React.Component {
     this.props.show()
   }
 
-  next() {
-    this.props.next()
+  next(path) {
+    this.props.next(path)
   }
 
   render() {
-    const {mnemomicImage, mnemomicAnswer, countdown, hidden, status} = this.props
+    const {mnemomicImage, mnemomicAnswer, countdown, hidden, status, path} = this.props
 
     const answer = hidden ? countdown : mnemomicAnswer
 
@@ -44,7 +44,7 @@ class Playground extends React.Component {
             raised
             >Visa <Icon name="done" /></Button>
           <Button
-            onClick={this.next.bind(this)}
+            onClick={this.next.bind(this, path)}
             disabled={status === 'stop'}
             ripple
             raised
@@ -61,13 +61,14 @@ Playground.propTypes = {
   hidden: PropTypes.bool.isRequired,
   next: PropTypes.func.isRequired,
   show: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
 }
 
 const mapStateToProps = (state) => state.game
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    next: () => { dispatch(Actions.next()) },
+    next: (path) => { dispatch(Actions.next(path)) },
     show: () => { dispatch(Actions.show()) },
   }
 }

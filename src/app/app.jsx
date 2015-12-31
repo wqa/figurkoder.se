@@ -7,21 +7,24 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import Root from './components/root'
 import configureStore from './redux/store'
 
+import createHistory from 'history/lib/createHashHistory'
+import { useQueries } from 'history'
 import InitialState from './redux/store/initialState'
 
-const Store = configureStore(InitialState())
+const history = useQueries(createHistory)()
+const Store = configureStore(InitialState(), history)
 
 //Needed for React Developer Tools
 window.React = React
 
-//Needed for onTouchTap
-//Can go away when react 1.0 release
-//Check this repo:
-//https://github.com/zilverline/react-tap-event-plugin
+/*
+ * Needed for onTouchTap
+ * Can go away when react 1.0 release
+ * Check this repo:
+ * https://github.com/zilverline/react-tap-event-plugin
+ */
 injectTapEventPlugin()
 
-// Render the main app react component into the app div.
-// For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
 ReactDOM.render(
-  <Root store={ Store } />
+  <Root store={ Store } history={ history }/>
 , document.getElementById('app'))

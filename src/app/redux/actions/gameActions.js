@@ -90,20 +90,35 @@ const GameActions = {
       }
 		}
 	},
-  next: () => {
+  next: (path) => {
 		return (dispatch, getState) => {
 			const newPair = +getState().game.currentPair < +getState().game.data.length - 1 ? +getState().game.currentPair + 1 : 0
 			const nextTimestamp = new Date().getTime()
 			const newElapsedTime = getState().game.status === 'pause' ? +getState().game.elapsedTime : +getState().game.elapsedTime + (+nextTimestamp - +getState().game.timestamp)
 
-      dispatch({
+			const actionObject = {
 				type: NEXT,
-        hidden: !getState().settings.practice,
+				hidden: !getState().settings.practice,
 				newPair: newPair,
 				status: 'start',
 				timestamp: +nextTimestamp,
 				elapsedTime: +newElapsedTime,
-      })
+			}
+
+			if(+getState().game.currentPair + 1 === +getState().game.data.length && !getState().settings.practice) {
+				dispatch({
+					...actionObject,
+					meta: {
+						transition: (state, action) => ({
+	          	path: `/result/${path}`,
+		        }),
+					},
+				})
+			} else {
+	      dispatch({
+					...actionObject,
+	      })
+			}
 		}
 	},
 }

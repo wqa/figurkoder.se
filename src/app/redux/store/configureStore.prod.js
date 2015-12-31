@@ -1,11 +1,13 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import CombinedReducers from './reducers/combinedReducers'
 import thunk from 'redux-thunk'
+import storeEnhancer from 'redux-history-transitions'
 
-const finaleCreateStore = compose (
-  applyMiddleware(thunk)
-)((createStore))
+export default function configureStore(initialState, history) {
+  const finaleCreateStore = compose (
+    applyMiddleware(thunk),
+    storeEnhancer(history),
+  )((createStore))
 
-export default function configureStore(initialState) {
   return finaleCreateStore(CombinedReducers, initialState)
 }
