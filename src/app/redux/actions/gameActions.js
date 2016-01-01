@@ -10,15 +10,17 @@ const {
 	PAUSE_GAME,
 	SHOW,
 	NEXT,
+	COUNTDOWN,
 } = ActionTypes
 
 let timer
+let countdown
 
 const GameActions = {
 	resetGame: () => {
-		if (timer) {
-			clearTimeout(timer)
-		}
+		if (timer) clearTimeout(timer)
+		if (countdown) clearTimeout(countdown)
+
 		return (dispatch, getState) => {
       dispatch({
         type: RESET,
@@ -66,19 +68,19 @@ const GameActions = {
 	},
 	stopGame: () => {
 		return (dispatch, getState) => {
-			if (timer) {
-				clearTimeout(timer)
-			}
+			if (timer) clearTimeout(timer)
+			if (countdown) clearTimeout(countdown)
+
       dispatch({
 				type: STOP_GAME,
+				countdown: +getState().settings.interval - 1,
       })
 		}
 	},
 	pauseGame: () => {
 		return (dispatch, getState) => {
-			if (timer) {
-				clearTimeout(timer)
-			}
+			if (timer) clearTimeout(timer)
+			if (countdown) clearTimeout(countdown)
 
 			const pauseTimestamp = new Date().getTime()
 			const newElapsedTime = +getState().game.elapsedTime + (+pauseTimestamp - +getState().game.timestamp)
@@ -106,7 +108,8 @@ const GameActions = {
 	},
   next: (path, auto) => {
 		return (dispatch, getState) => {
-			clearTimeout(timer)
+			if (timer) clearTimeout(timer)
+			if (countdown) clearTimeout(countdown)
 
 			const getElapsedTime = (status, paused, elapsedTime, timestamp) => {
 				if (status === 'pause') {
@@ -119,11 +122,37 @@ const GameActions = {
 			const elapsedTime = getElapsedTime(getState().game.status, getState().game.hasBeenPaused, +getState().game.elapsedTime, +getState().game.timestamp)
 			const timeout = !getState().game.hasBeenPaused ? getInterval : getInterval - +elapsedTime
 
-			const dispatchFunction = () => {
+			let lastCountdownTimeout = 0
+			const countdownDispatchFunction = () => {
+				// console.log('getState().game.hasBeenPaused:', getState().game.hasBeenPaused)
+				// console.log('getState().game:', getState().game)
+				dispatch({
+					type: COUNTDOWN,
+				})
+				if (getState().game.hasBeenPaused) {
+					const countdownTimeout = 1000 - +timeout.toString().slice(-3)
+					// console.log('countdownTimeout:', countdownTimeout, 'timeout:', timeout)
+					if (lastCountdownTimeout !== countdownTimeout) {
+						console.log('Have been paused')
+						countdown = setTimeout(() => countdownDispatchFunction(), countdownTimeout)
+						lastCountdownTimeout = countdownTimeout
+					} else {
+						console.log('Have not been paused')
+						countdown = setTimeout(() => countdownDispatchFunction(), 1000)
+					}
+				} else {
+					countdown = setTimeout(() => countdownDispatchFunction(), 1000)
+				}
+			}
+
+			const nextDispatchFunction = () => {
+				clearTimeout(countdown)
 				const timeout = !getState().game.hasBeenPaused ? getInterval : getInterval - +elapsedTime
 
 				if (getState().game.data.length === 0) {
-					clearTimeout(timer)
+					if (timer) clearTimeout(timer)
+					if (countdown) clearTimeout(countdown)
+
 					throw Error('No data')
 				}
 
@@ -131,17 +160,18 @@ const GameActions = {
 				const nextTimestamp = new Date().getTime()
 				const newElapsedTime = getElapsedTime(getState().game.status, false, +getState().game.elapsedTime, +getState().game.timestamp)
 
-				const actionObject = {
+				const nextActionObject = {
 					type: NEXT,
 					hidden: !getState().settings.practice,
 					newPair: newPair,
 					elapsedTime: +newElapsedTime,
+					countdown: +getState().settings.interval - 1,
 				}
 
 				if(+getState().game.currentPair + 1 === +getState().game.data.length && !getState().settings.practice) {
 					clearTimeout(timer)
 					dispatch({
-						...actionObject,
+						...nextActionObject,
 						meta: {
 							transition: (state, action) => ({
 		          	path: `/result/${path}`,
@@ -150,17 +180,20 @@ const GameActions = {
 					})
 				} else {
 		      dispatch({
-						...actionObject,
+						...nextActionObject,
 						timestamp: +(new Date().getTime()),
 		      })
-					timer = setTimeout(() => dispatchFunction(), getInterval)
+					timer = setTimeout(() => nextDispatchFunction(), getInterval)
+					countdown = setTimeout(() => countdownDispatchFunction(), 1000)
 				}
 			}
 
 			if(auto) {
-				timer = setTimeout(() => dispatchFunction(), timeout)
+				timer = setTimeout(() => nextDispatchFunction(), timeout)
+				countdown = setTimeout(() => countdownDispatchFunction(), 1000)
 			} else {
-				dispatchFunction()
+				countdownDispatchFunction()
+				nextDispatchFunction()
 			}
 		}
 	},

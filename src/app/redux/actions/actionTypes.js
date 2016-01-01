@@ -7,6 +7,7 @@ export const ActionTypesGame = {
   SET_PRACTICE: 'SET_PRACTICE',
   SHOW: 'SHOW',
   NEXT: 'NEXT',
+  COUNTDOWN: 'COUNTDOWN',
 }
 
 export const ActionTypesSettings = {

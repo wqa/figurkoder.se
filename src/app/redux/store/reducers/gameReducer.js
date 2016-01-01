@@ -10,6 +10,7 @@ const {
   STOP_GAME,
   SHOW,
   NEXT,
+  COUNTDOWN,
 } = ActionTypesGame
 
 const GameReducer = (state, action) => {
@@ -54,6 +55,7 @@ const GameReducer = (state, action) => {
         elapsedTime: 0,
         timestamp: 0,
         data: [],
+        countdown: +action.countdown,
       }
       break
     case SHOW:
@@ -76,6 +78,13 @@ const GameReducer = (state, action) => {
         elapsedTime: 0,
         result: newResult,
         hasBeenPaused: false,
+        countdown: +action.countdown,
+      }
+      break
+    case COUNTDOWN:
+      return {
+        ...state,
+        countdown: +state.countdown > 0 ? +state.countdown - 1 : 0,
       }
       break
     default:
