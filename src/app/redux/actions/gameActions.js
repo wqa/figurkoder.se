@@ -66,15 +66,29 @@ const GameActions = {
 			}
 		}
 	},
-	stopGame: () => {
+	stopGame: (path) => {
 		return (dispatch, getState) => {
 			if (timer) clearTimeout(timer)
 			if (countdown) clearTimeout(countdown)
 
-      dispatch({
+			const stopActionObject = {
 				type: STOP_GAME,
 				countdown: +getState().settings.interval - 1,
-      })
+			}
+			if (getState().settings.practice) {
+	      dispatch({
+					...stopActionObject,
+	      })
+			} else {
+				dispatch({
+					...stopActionObject,
+					meta: {
+						transition: (state, action) => ({
+							path: `/result/${path}`,
+						}),
+					},
+	      })
+			}
 		}
 	},
 	pauseGame: () => {
@@ -133,11 +147,11 @@ const GameActions = {
 					const countdownTimeout = 1000 - +timeout.toString().slice(-3)
 					// console.log('countdownTimeout:', countdownTimeout, 'timeout:', timeout)
 					if (lastCountdownTimeout !== countdownTimeout) {
-						console.log('Have been paused')
+						// console.log('Have been paused')
 						countdown = setTimeout(() => countdownDispatchFunction(), countdownTimeout)
 						lastCountdownTimeout = countdownTimeout
 					} else {
-						console.log('Have not been paused')
+						// console.log('Have not been paused')
 						countdown = setTimeout(() => countdownDispatchFunction(), 1000)
 					}
 				} else {

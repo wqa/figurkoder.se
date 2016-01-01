@@ -67,7 +67,9 @@ const GameReducer = (state, action) => {
       break
     case NEXT:
       const newResult = [...state.result]
-      newResult[state.currentPair] = [state.data[state.currentPair][0], state.hidden ? +action.elapsedTime / 1000 : state.data[state.currentPair][1]]
+      if (action.hidden) {
+        newResult[state.currentPair] = [state.data[state.currentPair][0], state.hidden ? +action.elapsedTime / 1000 : state.data[state.currentPair][1]]
+      }
 
       return {
         ...state,

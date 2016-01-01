@@ -26,7 +26,7 @@ class StartStop extends React.Component {
     this.props.pauseGame()
   }
   stop() {
-    this.props.stopGame()
+    this.props.stopGame(this.props.type)
   }
   render() {
     return (
@@ -56,6 +56,7 @@ class StartStop extends React.Component {
 
 StartStop.propTypes = {
   status: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   startGame: PropTypes.func.isRequired,
   pauseGame: PropTypes.func.isRequired,
   stopGame: PropTypes.func.isRequired,
@@ -67,7 +68,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     startGame: (type) => { dispatch(Actions.startGame(type)) },
     pauseGame: () => { dispatch(Actions.pauseGame()) },
-    stopGame: () => { dispatch(Actions.stopGame()) },
+    stopGame: (path) => { dispatch(Actions.stopGame(path)) },
     next: (path, auto) => { dispatch(Actions.next(path, auto)) },
   }
 }
