@@ -11,10 +11,11 @@ const ResultTable = (props) => {
   const { results } = props
 
   const isNotANumber = (item) => {
-    if (typeof item === 'object')
+    if (typeof item === 'object') {
       return !isNaN(item[1])
-    else
-      return !isNaN(item)
+    } else {
+      return typeof item === 'number' && !isNaN(item)
+    }
   }
 
   const formatSec = (time) => (
@@ -37,6 +38,8 @@ const ResultTable = (props) => {
     : null
 
   const avarage = summary / length
+
+  console.log('summary', summary)
 
   presentation.push({
     mnemomicImage: 'Genomsnittlig tid: ',
