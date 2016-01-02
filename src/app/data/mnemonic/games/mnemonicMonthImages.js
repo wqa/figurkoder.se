@@ -1,6 +1,6 @@
 const MnemonicMonthImages = {
   title: 'Månaderna',
-  description: 'Låt oss öva på lite månaderna vetja! It be fun, they said...',
+  description: '',
   start: 'Januari',
   stop: 'December',
   dropdown: true,

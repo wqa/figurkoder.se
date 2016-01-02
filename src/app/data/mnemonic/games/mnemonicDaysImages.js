@@ -1,6 +1,6 @@
 const MnemonicDaysImages = {
   title: 'Veckodagar',
-  description: 'Låt oss öva på lite veckodagar vetja! It be fun, they said...',
+  description: '',
   start: 'Måndag',
   stop: 'Söndag',
   dropdown: true,

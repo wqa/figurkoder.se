@@ -1,6 +1,6 @@
 const MnemonicMaleNameImages = {
   title: 'Mansnamn',
-  description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
+  description: 'Här är figurkoder för de 50 vanligaste mansnamnen.',
   start: 'Lars',
   stop: 'Filip',
   dropdown: true,

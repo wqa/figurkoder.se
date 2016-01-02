@@ -1,6 +1,6 @@
 const MnemonicAlphabetImages = {
   title: 'Bokstäver',
-  description: 'Låt oss öva på lite bokstäver vetja! It be fun, they said...',
+  description: '',
   start: 'A',
   stop: 'Ö',
   dropdown: true,

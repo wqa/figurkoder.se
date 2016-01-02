@@ -39,8 +39,6 @@ const ResultTable = (props) => {
 
   const avarage = summary / length
 
-  console.log('summary', summary)
-
   presentation.push({
     mnemomicImage: 'Genomsnittlig tid: ',
     time: formatSec(avarage),

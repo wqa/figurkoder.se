@@ -3,7 +3,7 @@ import MnemonicMaleNameImages from "./mnemonicMaleNameImages"
 
 const MnemonicNameImages = {
   title: 'Namn',
-  description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
+  description: 'Här är figurkoder för de 50 vanligaste kvinnonamnen och de 50 vanligaste mansnamnen.',
   start: 'Anna',
   stop: 'Filip',
   dropdown: true,

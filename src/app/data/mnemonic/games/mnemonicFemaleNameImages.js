@@ -1,6 +1,6 @@
 const MnemonicFemaleNameImages = {
   title: 'Kvinnonamn',
-  description: 'Låt oss öva på lite namn vetja! It be fun, they said...',
+  description: 'Här är figurkoder för de 50 vanligaste kvinnonamnen.',
   start: 'Anna',
   stop: 'Jessica',
   dropdown: true,

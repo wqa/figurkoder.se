@@ -1,6 +1,6 @@
 const MnemonicNumberImages = {
   title: 'Siffror',
-  description: 'Låt oss öva på lite siffror vetja! It be fun, they said...',
+  description: '',
   start: '00',
   stop: '99',
   dropdown: false,
