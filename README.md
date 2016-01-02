@@ -24,3 +24,5 @@ Note that all source code is located under `src/`
 ## Roadmap
  - Add "restart"-buttons to the Result component. Using them the user can either try the same mnemomic image's again or practice them again.
  - When going back from the Result's the settings should be kept.
+ - Add a setting for turning vibrations on and off.
+ - Make the app offline-first and make the whole app avalible offline.
