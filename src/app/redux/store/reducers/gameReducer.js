@@ -71,6 +71,12 @@ const GameReducer = (state, action) => {
         newResult[state.currentPair] = [state.data[state.currentPair][0], state.hidden ? +action.elapsedTime / 1000 : state.data[state.currentPair][1]]
       }
 
+      navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+
+      if (navigator.vibrate && action.vibrate) {
+      	navigator.vibrate(100)
+      }
+
       return {
         ...state,
         hidden: action.hidden,
