@@ -180,7 +180,7 @@ const GameActions = {
 					newPair: newPair,
 					elapsedTime: +newElapsedTime,
 					countdown: +getState().settings.interval - 1,
-					vibrate: vibrate ? true : false
+					vibrate: vibrate ? true : false,
 				}
 
 				if(+getState().game.currentPair + 1 === +getState().game.data.length && !getState().settings.practice) {
@@ -198,14 +198,14 @@ const GameActions = {
 						...nextActionObject,
 						timestamp: +(new Date().getTime()),
 		      })
-					timer = setTimeout(() => nextDispatchFunction(), getInterval)
-					countdown = setTimeout(() => countdownDispatchFunction(true), 1000)
+					timer = setTimeout(() => nextDispatchFunction(true), getInterval)
+					countdown = setTimeout(() => countdownDispatchFunction(), 1000)
 				}
 			}
 
 			if(auto) {
-				timer = setTimeout(() => nextDispatchFunction(), timeout)
-				countdown = setTimeout(() => countdownDispatchFunction(true), 1000)
+				timer = setTimeout(() => nextDispatchFunction(true), timeout)
+				countdown = setTimeout(() => countdownDispatchFunction(), 1000)
 			} else {
 				countdownDispatchFunction()
 				nextDispatchFunction()
