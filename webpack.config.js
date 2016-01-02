@@ -74,7 +74,7 @@ var config = {
 
 if (production) {
   process.env.NODE_ENV = 'production'
-  
+
   config.plugins = [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
