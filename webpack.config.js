@@ -3,16 +3,25 @@ var path = require('path')
 var buildPath = path.resolve(__dirname, '')
 var sourcePath = path.resolve(__dirname, 'src')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
+var upupPath = path.resolve(__dirname, 'src/app/upup/')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 
 const production = process.argv.find((element) => element === '--production') ? true : false
 
+const jsBaseEntry = [
+  'babel-polyfill',
+  './src/app/app.jsx',
+]
+
+const jsEntry = production ? jsBaseEntry.concat([
+  './src/app/upup/upup.start.js',
+  './src/app/upup/upup.min.js',
+  './src/app/upup/upup.sw.min.js',
+]) : jsBaseEntry
+
 var config = {
   entry: {
-    js: [
-      'babel-polyfill',
-      './src/app/app.jsx',
-    ],
+    js: jsEntry,
     html: './src/www/index.html',
   },
   devServer:{
@@ -42,13 +51,13 @@ var config = {
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
         include: [path.resolve(__dirname, "src/app")],
-        exclude: [nodeModulesPath],
+        exclude: [nodeModulesPath, upupPath],
       },
     ],
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: nodeModulesPath,
+        exclude: [nodeModulesPath, upupPath],
         loaders: [
             'react-hot',
             'babel?' + JSON.stringify({
@@ -82,6 +91,13 @@ if (production) {
       },
     }),
   ].concat(config.plugins)
+
+  config.module.loaders = config.module.loaders.concat([
+    {
+      test: /\upup.*.js$/,
+      loader: "file?name=[name].[ext]",
+    },
+  ])
 }
 
 module.exports = config
