@@ -3,7 +3,10 @@ var path = require('path')
 var buildPath = path.resolve(__dirname, '')
 var sourcePath = path.resolve(__dirname, 'src')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
-var upupPath = path.resolve(__dirname, 'src/app/upup/')
+var upupPath = path.resolve(__dirname, 'src/app/scripts/upup/')
+var upupStartPath = path.resolve(__dirname, 'src/app/scripts/upup/upup.start.js')
+var materialPath = path.resolve(__dirname, 'src/app/scripts/material.js')
+var redirectToHTTPSPath = path.resolve(__dirname, 'src/app/scripts/redirectToHTTPS.js')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 
 const production = process.argv.find((element) => element === '--production') ? true : false
@@ -11,12 +14,14 @@ const production = process.argv.find((element) => element === '--production') ? 
 const jsBaseEntry = [
   'babel-polyfill',
   './src/app/app.jsx',
+  './src/app/scripts/material.js',
+  './src/app/scripts/redirectToHTTPS.js',
 ]
 
 const jsEntry = production ? jsBaseEntry.concat([
-  './src/app/upup/upup.start.js',
-  './src/app/upup/upup.min.js',
-  './src/app/upup/upup.sw.min.js',
+  './src/app/scripts/upup/upup.start.js',
+  './src/app/scripts/upup/upup.min.js',
+  './src/app/scripts/upup/upup.sw.min.js',
 ]) : jsBaseEntry
 
 var config = {
@@ -33,7 +38,7 @@ var config = {
   },
   output: {
     path: buildPath,
-    filename: 'boundle.min.js',
+    filename: 'scripts/boundle.min.js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -51,13 +56,13 @@ var config = {
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
         include: [path.resolve(__dirname, "src/app")],
-        exclude: [nodeModulesPath, upupPath],
+        exclude: [nodeModulesPath, upupPath, materialPath, redirectToHTTPSPath],
       },
     ],
     loaders: [
       {
         test: /\.(js|jsx)$/,
-        exclude: [nodeModulesPath, upupPath],
+        exclude: [nodeModulesPath, upupPath, materialPath, redirectToHTTPSPath],
         loaders: [
             'react-hot',
             'babel?' + JSON.stringify({
@@ -68,6 +73,19 @@ var config = {
       {
         test: /\.html$/,
         loader: "file?name=[name].[ext]",
+      },
+      {
+        test: /(material|redirectToHTTPS).js$/,
+        loader: "file?name=scripts/[name].[ext]",
+      },
+      {
+        test: /upup.*.js$/,
+        exclude: [upupStartPath],
+        loader: "file?name=[name].[ext]",
+      },
+      {
+        test: /\upup.start.js$/,
+        loader: "file?name=scripts/[name].[ext]",
       },
     ],
   },
@@ -91,13 +109,6 @@ if (production) {
       },
     }),
   ].concat(config.plugins)
-
-  config.module.loaders = config.module.loaders.concat([
-    {
-      test: /\upup.*.js$/,
-      loader: "file?name=[name].[ext]",
-    },
-  ])
 }
 
 module.exports = config
