@@ -25,7 +25,13 @@
     <Content Include="ModelDefinition\Package1_1929.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_2213.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package2_1929.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2213.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1929.uml">
@@ -41,6 +47,18 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_2131.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2157.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2203.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2204.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2213.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="newApp\GameComponent.classdiagram">

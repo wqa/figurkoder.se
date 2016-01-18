@@ -2,4 +2,19 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="0ed78719-570f-409d-8764-87cc66fc48f6"
-  name="Model - Redux" xmlns="http://schemas.microsoft.com/dsltools/ModelStore" />
+  name="Model - Redux" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e8fb1bd8-cb33-46c0-8923-d0ab8bf03504"
+        LastKnownName="Actions"
+        LastKnownLocation="Package_2213.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4e330ee6-bb47-4280-ad85-8252c7551a36"
+        LastKnownName="Store"
+        LastKnownLocation="Package1_2213.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

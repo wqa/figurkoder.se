@@ -42,6 +42,12 @@
         LastKnownName="View - React::Game Component"
         LastKnownLocation="Package_2120.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d27d3d8b-57bb-41f3-a1e0-70ba41652772"
+        LastKnownName="Data - JS Objects"
+        LastKnownLocation="Package_2157.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
