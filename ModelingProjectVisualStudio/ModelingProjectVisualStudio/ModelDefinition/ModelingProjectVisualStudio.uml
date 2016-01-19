@@ -48,6 +48,12 @@
         LastKnownName="Data - JS Objects"
         LastKnownLocation="Package_2157.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7b80c3f7-d6dd-47c8-afe0-39d4e99e8189"
+        LastKnownName="Plumber"
+        LastKnownLocation="Package_2105.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

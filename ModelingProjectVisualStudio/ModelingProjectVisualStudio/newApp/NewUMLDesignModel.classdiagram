@@ -32,16 +32,38 @@
           <packageHasNamedElement>
             <class Id="8372e7f9-3381-4a05-8ef9-deac667baa60" name="StartPage" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="5cf3a777-de47-44fc-89b7-330b1c0736be" />
+              <suppliersInternal>
+                <dependency Id="1f7eb6d1-3282-40e4-8341-ff5478c5a1c4">
+                  <classMoniker Id="c6863341-b256-4d9b-8e78-e853942d5b1d" LastKnownName="Games" />
+                  <elementDefinition Id="e5887797-60d1-4834-ab8a-f5b40b30763e" />
+                </dependency>
+              </suppliersInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
             <class Id="a22fa3d4-bbfb-4869-9854-7050e45d2e14" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="ca56243c-8a67-4225-8745-43fda649630f" />
+              <suppliersInternal>
+                <dependency Id="27ae794d-5ab6-4481-b9d9-76c2b9764fad">
+                  <classMoniker Id="2f464943-bd8b-48a8-ae58-48b4d860502d" LastKnownName="Actions" />
+                  <elementDefinition Id="0f1436de-8a0c-4af9-b335-9c32f98670cb" />
+                </dependency>
+                <dependency Id="e013deb7-a32f-4455-8e9c-f06dd4dfde4c">
+                  <classMoniker Id="28afe585-a7af-4aa2-a811-ff13c7b536a0" LastKnownName="GetMnemonicImages" />
+                  <elementDefinition Id="d1babce2-37fe-40be-981a-82dcf31c31de" />
+                </dependency>
+              </suppliersInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
             <class Id="cdb58549-89b1-4738-8679-8044e0f2f08b" name="Result" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="15d2c105-d7d6-4531-985f-7cec568cfbd1" />
+              <suppliersInternal>
+                <dependency Id="974b64a7-5f5b-4aef-ae37-71b663590346">
+                  <classMoniker Id="2f464943-bd8b-48a8-ae58-48b4d860502d" LastKnownName="Actions" />
+                  <elementDefinition Id="dc858568-c36e-45f5-9576-506a2c359116" />
+                </dependency>
+              </suppliersInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -57,6 +79,17 @@
           <packageHasNamedElement>
             <class Id="e751564d-0f07-46d8-aec2-904681d7f546" name="Contact" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="10db4e2c-c5ee-40a5-ab48-57196dde29d7" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="68424f7d-deb1-4513-bcc6-b61129e58e29" name="Root" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="23a6143c-bfbe-4b01-b0ba-5387bcfb9173" />
+              <suppliersInternal>
+                <dependency Id="bac84ee9-635d-4205-8efc-9419b996f379">
+                  <classMoniker Id="6dcdfc4d-64e2-4185-81d6-fe5092a97235" LastKnownName="Routes" />
+                  <elementDefinition Id="7c8ef423-f0c1-44db-8fb8-ea44ca45321a" />
+                </dependency>
+              </suppliersInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
@@ -101,6 +134,25 @@
                 <dependency Id="01497ba5-70fe-42ee-b0b3-93e4e3cfbd16">
                   <classMoniker Id="e0216293-c35b-4285-a592-c1852ff4e0c2" LastKnownName="About" />
                   <elementDefinition Id="1ce0a765-9d88-49c4-aec4-e45f9e22a025" />
+                </dependency>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="3a2ea012-fe3f-4601-b138-2dd36cdb9cf4" name="App" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4cd66b08-91f5-47ce-936c-5eb2595ff17e" />
+              <suppliersInternal>
+                <dependency Id="d4d034b3-28ce-4a5f-ab39-2e988acf7510">
+                  <classMoniker Id="68424f7d-deb1-4513-bcc6-b61129e58e29" LastKnownName="Root" />
+                  <elementDefinition Id="895db929-ca8e-44ea-9223-2ff1a066c9fa" />
+                </dependency>
+                <dependency Id="516128d7-8117-41bb-9cab-552f8a0ba6f5">
+                  <classMoniker Id="8e4016a4-a31c-40e4-a7a1-b5e3e1060366" LastKnownName="Store" />
+                  <elementDefinition Id="9a745d6e-0663-473f-9c7a-2f2d27843886" />
+                </dependency>
+                <dependency Id="452bc359-a28b-4099-9f88-fe8ced7d9886">
+                  <classMoniker Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" LastKnownName="InitialState" />
+                  <elementDefinition Id="36a4eb44-df66-4a8c-80e0-bd836ff5b57a" />
                 </dependency>
               </suppliersInternal>
             </class>
@@ -300,126 +352,6 @@
               <elementDefinition Id="4e330ee6-bb47-4280-ad85-8252c7551a36" />
               <packagedElements>
                 <packageHasNamedElement>
-                  <package Id="a6528b95-0bbc-48d0-a111-fb0cd330d79f" name="Reducers">
-                    <elementDefinition Id="d24a4fde-c309-42fb-85e9-6778a6dbe7b4" />
-                    <packagedElements>
-                      <packageHasNamedElement>
-                        <class Id="52b1b4d3-d78f-4629-87cb-781d5edc84df" name="CombinedReducers" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="418c49e9-4ce9-4d02-8524-38a5533357e9" />
-                          <suppliersInternal>
-                            <dependency Id="ff64516b-3602-46a7-8f6c-c7737d92799b">
-                              <classMoniker Id="e4323b3b-a9b9-4714-b71f-bf480a7b19a3" LastKnownName="GameReducer" />
-                              <elementDefinition Id="f56afacd-030a-4a6b-87b6-c3742073f0e8" />
-                            </dependency>
-                            <dependency Id="fa93a8f7-35f3-4fe9-ba91-19c6b9276e21">
-                              <classMoniker Id="912d4ddc-a836-4f22-90d1-cefd96e23932" LastKnownName="SettingsReducer" />
-                              <elementDefinition Id="e98674b7-17bd-4211-8f7d-9529dae46279" />
-                            </dependency>
-                          </suppliersInternal>
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="e4323b3b-a9b9-4714-b71f-bf480a7b19a3" name="GameReducer" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="f071113e-80e0-412e-90a3-b76c04da19f6" />
-                          <suppliersInternal>
-                            <dependency Id="01b6d0fc-30e1-42e6-8fbd-27c342e20e32">
-                              <classMoniker Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" LastKnownName="InitialState" />
-                              <elementDefinition Id="aceff67a-07d1-4470-bc6d-1bbab0e0c089" />
-                            </dependency>
-                          </suppliersInternal>
-                          <targetEnds>
-                            <association Id="e5233fcc-6170-4461-ab64-b5a0dfa9e8b6" isDerived="false" sourceEndRoleName=" " targetEndRoleName=" " isLeaf="false" isAbstract="false">
-                              <classMoniker Id="cdb6d782-27d4-4bc5-865b-fe58e1b44134" LastKnownName="ActionTypes" />
-                              <relationshipOwnedElementsInternal>
-                                <associationHasOwnedEnds>
-                                  <memberEnd Id="f4d7a02a-a442-405f-8e1f-41d7ba601751" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                                    <lowerValueInternal>
-                                      <literalString Id="4e61069b-5f0a-466c-b12a-7373abba01c7" name="Lower">
-                                        <elementDefinition Id="47f020a9-4597-4eb8-9120-868cc89d30c3" />
-                                      </literalString>
-                                    </lowerValueInternal>
-                                    <upperValueInternal>
-                                      <literalString Id="3051fb64-3432-4fc1-a1fd-a1668649f126" name="Upper">
-                                        <elementDefinition Id="0ac11dbe-881e-4a38-bbaf-e3b9e4a15273" />
-                                      </literalString>
-                                    </upperValueInternal>
-                                    <elementDefinition Id="9aa7907c-40d7-4562-8440-97a94e9a9d78" />
-                                  </memberEnd>
-                                </associationHasOwnedEnds>
-                                <associationHasOwnedEnds>
-                                  <memberEnd Id="422950a7-f015-4776-94ff-f49c6e543309" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                                    <lowerValueInternal>
-                                      <literalString Id="5d09cefa-4635-4742-985e-a60c82431fd2" name="Lower">
-                                        <elementDefinition Id="1f960c48-324f-4e68-91cd-760d39a0744e" />
-                                      </literalString>
-                                    </lowerValueInternal>
-                                    <upperValueInternal>
-                                      <literalString Id="a05b4e2a-7d01-45c3-9a30-3311ecbcf6e3" name="Upper">
-                                        <elementDefinition Id="87ce358d-57b6-4614-a8ca-dcb927ef6273" />
-                                      </literalString>
-                                    </upperValueInternal>
-                                    <elementDefinition Id="ddf2cdf3-7a61-4d0d-9c0c-7a89555961f0" />
-                                  </memberEnd>
-                                </associationHasOwnedEnds>
-                              </relationshipOwnedElementsInternal>
-                              <elementDefinition Id="f79e6460-a883-4107-b395-366abc675cb9" />
-                            </association>
-                          </targetEnds>
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="912d4ddc-a836-4f22-90d1-cefd96e23932" name="SettingsReducer" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="bd34d5a0-82fb-407d-8b0a-8698b1307546" />
-                          <suppliersInternal>
-                            <dependency Id="35cfc4ac-7748-443b-bbf7-95d222f814b8">
-                              <classMoniker Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" LastKnownName="InitialState" />
-                              <elementDefinition Id="4b8b539d-1b80-44fd-8e99-541313f260e5" />
-                            </dependency>
-                          </suppliersInternal>
-                          <targetEnds>
-                            <association Id="7e6be7e2-bd53-4389-a6d0-ea165e6e6c93" isDerived="false" sourceEndRoleName=" " targetEndRoleName=" " isLeaf="false" isAbstract="false">
-                              <classMoniker Id="cdb6d782-27d4-4bc5-865b-fe58e1b44134" LastKnownName="ActionTypes" />
-                              <relationshipOwnedElementsInternal>
-                                <associationHasOwnedEnds>
-                                  <memberEnd Id="66d5df59-85b5-438b-b934-008ba25f47bc" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                                    <lowerValueInternal>
-                                      <literalString Id="d12a6a5c-e562-4b32-8aa8-9e43b200ea15" name="Lower">
-                                        <elementDefinition Id="24f63a90-1a9e-41bc-8182-f12d96dd1ffa" />
-                                      </literalString>
-                                    </lowerValueInternal>
-                                    <upperValueInternal>
-                                      <literalString Id="801b6d4c-11ee-49e3-93cd-f9d8ba742ead" name="Upper">
-                                        <elementDefinition Id="9e0823f7-da68-44a0-9160-42e206438142" />
-                                      </literalString>
-                                    </upperValueInternal>
-                                    <elementDefinition Id="12a165f5-c0c2-4141-8a59-3306293eb1bb" />
-                                  </memberEnd>
-                                </associationHasOwnedEnds>
-                                <associationHasOwnedEnds>
-                                  <memberEnd Id="0a05ea60-5b74-4aad-88d8-7c4f3a6cddc0" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                                    <lowerValueInternal>
-                                      <literalString Id="a9e01067-fdc3-4528-a6fd-7f7795fd73b2" name="Lower">
-                                        <elementDefinition Id="c2cef6cb-54b4-43e1-aa1a-3282c17a6f69" />
-                                      </literalString>
-                                    </lowerValueInternal>
-                                    <upperValueInternal>
-                                      <literalString Id="07e3006a-6f33-406d-8555-9476083b4f5b" name="Upper">
-                                        <elementDefinition Id="fd4d519b-1393-4409-a334-2ab096a422ec" />
-                                      </literalString>
-                                    </upperValueInternal>
-                                    <elementDefinition Id="56e275e3-4187-4ee2-b73a-99ca6a07c837" />
-                                  </memberEnd>
-                                </associationHasOwnedEnds>
-                              </relationshipOwnedElementsInternal>
-                              <elementDefinition Id="b8d04ae4-e792-4451-bb22-fcb516f067b7" />
-                            </association>
-                          </targetEnds>
-                        </class>
-                      </packageHasNamedElement>
-                    </packagedElements>
-                  </package>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
                   <class Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" name="InitialState" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="40b0a020-0e13-4a42-bda5-670ebf5be303" />
                   </class>
@@ -442,24 +374,56 @@
                 <packageHasNamedElement>
                   <class Id="5e268828-0337-44bc-9f16-dc75b4d7d103" name="ConfigureStore.Production" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="3dd8b1a6-3a4e-434d-a8d3-2bc89e6fd716" />
-                    <suppliersInternal>
-                      <dependency Id="ec13842e-78c6-4517-9610-47b997de5567">
-                        <classMoniker Id="52b1b4d3-d78f-4629-87cb-781d5edc84df" LastKnownName="CombinedReducers" />
-                        <elementDefinition Id="0e7be7a9-6713-40ba-862d-d5eea38afa5c" />
-                      </dependency>
-                    </suppliersInternal>
                   </class>
                 </packageHasNamedElement>
                 <packageHasNamedElement>
                   <class Id="d30b9187-8f7c-4bf1-ab8a-8a0bd891c5af" name="ConfigureStore.Development" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="694caf9b-5885-4f1e-b1c4-16888a4c3999" />
-                    <suppliersInternal>
-                      <dependency Id="bbc37e9a-9033-45f7-8741-4c4791798aa5">
-                        <classMoniker Id="52b1b4d3-d78f-4629-87cb-781d5edc84df" LastKnownName="CombinedReducers" />
-                        <elementDefinition Id="5cf73bb9-ae22-4a24-8968-daa9f3cfe976" />
-                      </dependency>
-                    </suppliersInternal>
                   </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="d11702df-5872-4aa7-bdce-93dc4fbfa169" name="Reducers">
+                    <elementDefinition Id="61c58c50-a320-4755-8443-7423b7255977" />
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <class Id="4ebbc86a-2a5f-41b2-8b74-6235f4da49df" name="CombinedReducers" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="7f1c3c92-9486-46fa-9e2d-767e702fb75f" />
+                          <suppliersInternal>
+                            <dependency Id="2fc92051-9e83-4693-9442-b2771b3c4631">
+                              <classMoniker Id="86d3fddb-0b70-4fb3-83da-92044436695d" LastKnownName="GameReducer" />
+                              <elementDefinition Id="811a4a6e-0228-42f8-bf9c-6d0c63f3a180" />
+                            </dependency>
+                            <dependency Id="c05ec83d-5785-4621-88d5-71d78a74514b">
+                              <classMoniker Id="5bfee63a-c21d-46b0-b802-b885249db8a0" LastKnownName="SettingsReducer" />
+                              <elementDefinition Id="805a5a22-37b4-46b9-9baf-71a40fffbb3d" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="86d3fddb-0b70-4fb3-83da-92044436695d" name="GameReducer" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="959227bb-c4dc-4707-836c-fd6f13d8af74" />
+                          <suppliersInternal>
+                            <dependency Id="5354b608-4b4e-4962-ad88-879630f2ee1b">
+                              <classMoniker Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" LastKnownName="InitialState" />
+                              <elementDefinition Id="38b1f12c-e9eb-4f07-986b-be7ede1770ab" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <class Id="5bfee63a-c21d-46b0-b802-b885249db8a0" name="SettingsReducer" isAbstract="false" isLeaf="false" isActiveClass="false">
+                          <elementDefinition Id="3473eb01-3b61-4f5a-baa9-6f93f5a68b28" />
+                          <suppliersInternal>
+                            <dependency Id="87b03279-cc7d-418a-a984-187830e54fbf">
+                              <classMoniker Id="9e1a441d-eea9-4676-9792-91543b3a4c4b" LastKnownName="InitialState" />
+                              <elementDefinition Id="e22b0f4b-7dca-42b7-b194-c1e2ef2604cf" />
+                            </dependency>
+                          </suppliersInternal>
+                        </class>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
                 </packageHasNamedElement>
               </packagedElements>
             </package>

@@ -5,12 +5,6 @@
   name="Store" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <packagedElements>
     <packageHasNamedElement>
-      <packageMoniker
-        Id="d24a4fde-c309-42fb-85e9-6778a6dbe7b4"
-        LastKnownName="Reducers"
-        LastKnownLocation="Package2_2213.uml" />
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <class
         Id="40b0a020-0e13-4a42-bda5-670ebf5be303"
         name="InitialState"
@@ -49,17 +43,7 @@
         name="ConfigureStore.Production"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="0e7be7a9-6713-40ba-862d-d5eea38afa5c">
-            <classMoniker
-              Id="418c49e9-4ce9-4d02-8524-38a5533357e9"
-              LastKnownName="CombinedReducers"
-              LastKnownLocation="Package2_2213.uml" />
-          </dependency>
-        </suppliersInternal>
-      </class>
+        isActiveClass="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -67,17 +51,13 @@
         name="ConfigureStore.Development"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <dependency
-            Id="5cf73bb9-ae22-4a24-8968-daa9f3cfe976">
-            <classMoniker
-              Id="418c49e9-4ce9-4d02-8524-38a5533357e9"
-              LastKnownName="CombinedReducers"
-              LastKnownLocation="Package2_2213.uml" />
-          </dependency>
-        </suppliersInternal>
-      </class>
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="61c58c50-a320-4755-8443-7423b7255977"
+        LastKnownName="Reducers"
+        LastKnownLocation="Package_2042.uml" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

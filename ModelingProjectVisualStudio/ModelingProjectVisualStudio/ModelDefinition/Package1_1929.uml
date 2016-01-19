@@ -71,5 +71,37 @@
         </suppliersInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4cd66b08-91f5-47ce-936c-5eb2595ff17e"
+        name="App"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="895db929-ca8e-44ea-9223-2ff1a066c9fa">
+            <classMoniker
+              Id="23a6143c-bfbe-4b01-b0ba-5387bcfb9173"
+              LastKnownName="Root"
+              LastKnownLocation="Package_1929.uml" />
+          </dependency>
+          <dependency
+            Id="9a745d6e-0663-473f-9c7a-2f2d27843886">
+            <classMoniker
+              Id="9e3ce94c-8e39-4a0d-b4b7-e96466ef90eb"
+              LastKnownName="Store"
+              LastKnownLocation="Package1_2213.uml" />
+          </dependency>
+          <dependency
+            Id="36a4eb44-df66-4a8c-80e0-bd836ff5b57a">
+            <classMoniker
+              Id="40b0a020-0e13-4a42-bda5-670ebf5be303"
+              LastKnownName="InitialState"
+              LastKnownLocation="Package1_2213.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>
