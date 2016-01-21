@@ -58,7 +58,7 @@
           <behaviorExecutionSpecification Id="2945a26b-f4b0-446f-8248-ae8792317ac8" name="BehaviorExecutionSpecification3">
             <elementDefinition Id="0930c805-50ec-4585-8db7-c0ce85eb356c" />
             <coveredLifelines>
-              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="a4d85f20-2fa7-4504-b26f-5c10c3910280" LastKnownName="ExecutionOccurrenceSpecification6" />
@@ -79,13 +79,13 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="755083ef-c6ee-4a10-b8bb-ae143c14684e" name="MessageOccurrenceSpecification6">
             <elementDefinition Id="094ac50b-a0f2-4ff6-a5b4-0f7197a282a8" />
             <covered>
-              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="c8b753a7-b0df-4ceb-9012-edb5153800d2" name="MessageOccurrenceSpecification5">
@@ -103,7 +103,7 @@
           <messageOccurrenceSpecification Id="78893f75-dbbb-4861-be5d-5ae967b097cb" name="MessageOccurrenceSpecification7">
             <elementDefinition Id="9992cd79-16f2-4fe8-aada-4821fcc0aa43" />
             <covered>
-              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="a4d85f20-2fa7-4504-b26f-5c10c3910280" name="ExecutionOccurrenceSpecification6">
@@ -114,7 +114,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+              <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
             </covered>
           </executionOccurrenceSpecification>
           <behaviorExecutionSpecification Id="b676d1a4-dac0-49f4-9f05-9903d2524097" name="BehaviorExecutionSpecification4">
@@ -327,17 +327,6 @@
               <messageOccurrenceSpecificationMoniker Id="94519d89-00f5-4ab9-a798-5fead01578cf" LastKnownName="MessageOccurrenceSpecification15" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification Id="a26d33a0-ea2c-4c33-9647-3d6f500e5973" name="ExecutionOccurrenceSpecification12">
-            <elementDefinition Id="97bc7fae-5048-4ff4-ba41-ef8805b87ebb" />
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="858fc6e8-5506-47f6-b34f-fbcc7aabdc05" LastKnownName="ExecutionEvent" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker Id="e6fde2be-a8bc-4834-8d42-800355f727e4" LastKnownName="Store :: Redux Store" />
-            </covered>
-          </executionOccurrenceSpecification>
           <executionOccurrenceSpecification Id="f6419065-1ab7-41b3-bc0f-9ed3bb9e8637" name="ExecutionOccurrenceSpecification21">
             <elementDefinition Id="943603c3-a67e-4ee5-acf5-675f856e8026" />
             <event>
@@ -358,6 +347,17 @@
             </event>
             <covered>
               <lifelineMoniker Id="e517d510-01de-494d-bc7d-712db7872dc6" LastKnownName="GameReducer :: Redux Store" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="a26d33a0-ea2c-4c33-9647-3d6f500e5973" name="ExecutionOccurrenceSpecification12">
+            <elementDefinition Id="97bc7fae-5048-4ff4-ba41-ef8805b87ebb" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="858fc6e8-5506-47f6-b34f-fbcc7aabdc05" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="e6fde2be-a8bc-4834-8d42-800355f727e4" LastKnownName="Store :: Redux Store" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="77afdfe9-47ce-4452-858d-b90b121db9d0" name="MessageOccurrenceSpecification23">
@@ -415,26 +415,15 @@
               <messageOccurrenceSpecificationMoniker Id="780073aa-cce6-42d2-a0ef-37e5b37bc27d" LastKnownName="MessageOccurrenceSpecification26" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
-          <executionOccurrenceSpecification Id="e4f38784-f257-4aaf-a166-6266555a0663" name="ExecutionOccurrenceSpecification18">
-            <elementDefinition Id="12adc935-94da-4b17-8e56-fab5e511b640" />
+          <executionOccurrenceSpecification Id="0bc010a2-b88a-4901-86b9-f52dd4992738" name="ExecutionOccurrenceSpecification13">
+            <elementDefinition Id="c0bacbea-189b-412e-95d0-e5998036cae3" />
             <event>
               <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="dbb5b9ff-8f18-43de-9aca-62aa88ddfe26" LastKnownName="ExecutionEvent" />
+                <executionEventMoniker Id="1038ea77-d9ef-4952-89b3-177bf96bba61" LastKnownName="ExecutionEvent" />
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="2b795cdb-555e-4182-b02a-0697fb740fa7" LastKnownName="Connect :: React-Redux" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification Id="bc4961ff-f536-4588-8fe1-55fa86c39b48" name="ExecutionOccurrenceSpecification23">
-            <elementDefinition Id="9cb478f6-617e-415f-9b26-ecd7aaa10c7f" />
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="7e0946f9-ef6e-4394-98a6-7a3cbf146aa6" LastKnownName="ExecutionEvent" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker Id="c324d511-aaf2-4e54-b45d-cbdce615883f" LastKnownName="Playground :: React Component" />
+              <lifelineMoniker Id="e6fde2be-a8bc-4834-8d42-800355f727e4" LastKnownName="Store :: Redux Store" />
             </covered>
           </executionOccurrenceSpecification>
           <executionOccurrenceSpecification Id="85ef4446-de37-4b55-a13b-8dea870de336" name="ExecutionOccurrenceSpecification4">
@@ -448,15 +437,26 @@
               <lifelineMoniker Id="a3f0fec7-1f12-4bc3-9c25-e8fd7150ee77" LastKnownName="GameActions :: Redux Action Creator" />
             </covered>
           </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification Id="0bc010a2-b88a-4901-86b9-f52dd4992738" name="ExecutionOccurrenceSpecification13">
-            <elementDefinition Id="c0bacbea-189b-412e-95d0-e5998036cae3" />
+          <executionOccurrenceSpecification Id="bc4961ff-f536-4588-8fe1-55fa86c39b48" name="ExecutionOccurrenceSpecification23">
+            <elementDefinition Id="9cb478f6-617e-415f-9b26-ecd7aaa10c7f" />
             <event>
               <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="1038ea77-d9ef-4952-89b3-177bf96bba61" LastKnownName="ExecutionEvent" />
+                <executionEventMoniker Id="7e0946f9-ef6e-4394-98a6-7a3cbf146aa6" LastKnownName="ExecutionEvent" />
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="e6fde2be-a8bc-4834-8d42-800355f727e4" LastKnownName="Store :: Redux Store" />
+              <lifelineMoniker Id="c324d511-aaf2-4e54-b45d-cbdce615883f" LastKnownName="Playground :: React Component" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="e4f38784-f257-4aaf-a166-6266555a0663" name="ExecutionOccurrenceSpecification18">
+            <elementDefinition Id="12adc935-94da-4b17-8e56-fab5e511b640" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="dbb5b9ff-8f18-43de-9aca-62aa88ddfe26" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="2b795cdb-555e-4182-b02a-0697fb740fa7" LastKnownName="Connect :: React-Redux" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="cda9f420-90e6-430e-bc1a-84955af3db57" name="MessageOccurrenceSpecification16">
@@ -499,6 +499,17 @@
               <messageOccurrenceSpecificationMoniker Id="438ca793-d158-48e3-a596-9e9e723f53d1" LastKnownName="MessageOccurrenceSpecification27" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="4f5f79c6-38e9-4a0e-b507-e58b8abe46e2" name="ExecutionOccurrenceSpecification22">
+            <elementDefinition Id="d4b3b672-4c12-48f5-94ff-dcbd1b4c3d0b" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="3682282e-41b8-4728-ae63-f5e4f462012b" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="f4ae4aaf-96ef-4298-a2a3-d433854fad97" LastKnownName="Game :: React Component" />
+            </covered>
+          </executionOccurrenceSpecification>
           <executionOccurrenceSpecification Id="30f223b9-4c9a-4036-a569-3d9d6d10100c" name="ExecutionOccurrenceSpecification19">
             <elementDefinition Id="3ee05060-f57c-4dbc-8944-f639a65c03f7" />
             <event>
@@ -519,17 +530,6 @@
             </event>
             <covered>
               <lifelineMoniker Id="e517d510-01de-494d-bc7d-712db7872dc6" LastKnownName="GameReducer :: Redux Store" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification Id="4f5f79c6-38e9-4a0e-b507-e58b8abe46e2" name="ExecutionOccurrenceSpecification22">
-            <elementDefinition Id="d4b3b672-4c12-48f5-94ff-dcbd1b4c3d0b" />
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker Id="3682282e-41b8-4728-ae63-f5e4f462012b" LastKnownName="ExecutionEvent" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker Id="f4ae4aaf-96ef-4298-a2a3-d433854fad97" LastKnownName="Game :: React Component" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="3adf71d7-6728-4e56-a5f0-fcd9f458d0bd" name="MessageOccurrenceSpecification21">
@@ -694,7 +694,7 @@
               <executionOccurrenceSpecificationMoniker Id="85ef4446-de37-4b55-a13b-8dea870de336" LastKnownName="ExecutionOccurrenceSpecification4" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="3872fc83-6ece-4375-b32b-045405f39aef" name="GetMnemonicImages :: Data" isActor="false" lifelineDisplayName="GetMnemonicImages :: Data">
+          <lifeline Id="3872fc83-6ece-4375-b32b-045405f39aef" name="GetMnemonicImages :: Model" isActor="false" lifelineDisplayName="GetMnemonicImages :: Model">
             <elementDefinition Id="be267fca-4b35-428e-b661-7f50633ab676" />
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker Id="0f44aaba-26cb-4b86-8e08-3ca55edbafb4" LastKnownName="ExecutionOccurrenceSpecification5" />

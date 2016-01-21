@@ -184,7 +184,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="be267fca-4b35-428e-b661-7f50633ab676"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </coveredLifelines>
             <finish>
@@ -224,7 +224,7 @@
             <covered>
               <lifelineMoniker
                 Id="be267fca-4b35-428e-b661-7f50633ab676"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -234,7 +234,7 @@
             <covered>
               <lifelineMoniker
                 Id="be267fca-4b35-428e-b661-7f50633ab676"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -264,7 +264,7 @@
             <covered>
               <lifelineMoniker
                 Id="be267fca-4b35-428e-b661-7f50633ab676"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -282,7 +282,7 @@
             <covered>
               <lifelineMoniker
                 Id="be267fca-4b35-428e-b661-7f50633ab676"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -667,24 +667,6 @@
             </nestedOccurrences>
           </behaviorExecutionSpecification>
           <executionOccurrenceSpecification
-            Id="97bc7fae-5048-4ff4-ba41-ef8805b87ebb"
-            name="ExecutionOccurrenceSpecification12">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="fc7d500e-5fa2-46a5-8df0-c55e63400023"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="5c51d1df-9d2c-4633-9f66-654498f5341b"
-                LastKnownName="Store :: Redux Store"
-                LastKnownLocation="ModelingProjectVisualStudio.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification
             Id="943603c3-a67e-4ee5-acf5-675f856e8026"
             name="ExecutionOccurrenceSpecification21">
             <event>
@@ -717,6 +699,24 @@
               <lifelineMoniker
                 Id="04cf0e2b-6ad2-48fa-9d15-f0e32d38ead5"
                 LastKnownName="GameReducer :: Redux Store"
+                LastKnownLocation="ModelingProjectVisualStudio.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="97bc7fae-5048-4ff4-ba41-ef8805b87ebb"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fc7d500e-5fa2-46a5-8df0-c55e63400023"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5c51d1df-9d2c-4633-9f66-654498f5341b"
+                LastKnownName="Store :: Redux Store"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -821,38 +821,20 @@
             </nestedOccurrences>
           </behaviorExecutionSpecification>
           <executionOccurrenceSpecification
-            Id="12adc935-94da-4b17-8e56-fab5e511b640"
-            name="ExecutionOccurrenceSpecification18">
+            Id="c0bacbea-189b-412e-95d0-e5998036cae3"
+            name="ExecutionOccurrenceSpecification13">
             <event>
               <executionOccurrenceSpecificationReferencesEvent>
                 <executionEventMoniker
-                  Id="30f160ea-3b02-471c-adf0-b7078ad572b3"
+                  Id="aaad687e-9420-441a-8f5b-2ae9834bcb8f"
                   LastKnownName="ExecutionEvent"
                   LastKnownLocation="ModelingProjectVisualStudio.uml" />
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
               <lifelineMoniker
-                Id="18d8b239-594c-4110-aafb-d0da8f7871bc"
-                LastKnownName="Connect :: React-Redux"
-                LastKnownLocation="ModelingProjectVisualStudio.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="9cb478f6-617e-415f-9b26-ecd7aaa10c7f"
-            name="ExecutionOccurrenceSpecification23">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="396555e3-2c4d-4d9a-9052-3519369b89d5"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="856994e7-9a6c-49c4-89cb-2e71c2207cc8"
-                LastKnownName="Playground :: React Component"
+                Id="5c51d1df-9d2c-4633-9f66-654498f5341b"
+                LastKnownName="Store :: Redux Store"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -875,20 +857,38 @@
             </covered>
           </executionOccurrenceSpecification>
           <executionOccurrenceSpecification
-            Id="c0bacbea-189b-412e-95d0-e5998036cae3"
-            name="ExecutionOccurrenceSpecification13">
+            Id="9cb478f6-617e-415f-9b26-ecd7aaa10c7f"
+            name="ExecutionOccurrenceSpecification23">
             <event>
               <executionOccurrenceSpecificationReferencesEvent>
                 <executionEventMoniker
-                  Id="aaad687e-9420-441a-8f5b-2ae9834bcb8f"
+                  Id="396555e3-2c4d-4d9a-9052-3519369b89d5"
                   LastKnownName="ExecutionEvent"
                   LastKnownLocation="ModelingProjectVisualStudio.uml" />
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
               <lifelineMoniker
-                Id="5c51d1df-9d2c-4633-9f66-654498f5341b"
-                LastKnownName="Store :: Redux Store"
+                Id="856994e7-9a6c-49c4-89cb-2e71c2207cc8"
+                LastKnownName="Playground :: React Component"
+                LastKnownLocation="ModelingProjectVisualStudio.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="12adc935-94da-4b17-8e56-fab5e511b640"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="30f160ea-3b02-471c-adf0-b7078ad572b3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="18d8b239-594c-4110-aafb-d0da8f7871bc"
+                LastKnownName="Connect :: React-Redux"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -965,6 +965,24 @@
             </nestedOccurrences>
           </behaviorExecutionSpecification>
           <executionOccurrenceSpecification
+            Id="d4b3b672-4c12-48f5-94ff-dcbd1b4c3d0b"
+            name="ExecutionOccurrenceSpecification22">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8cb3818f-4050-42b0-8637-456bb0a6ee5a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9f874cc2-ae9d-4bfe-9589-41e76e1f1d07"
+                LastKnownName="Game :: React Component"
+                LastKnownLocation="ModelingProjectVisualStudio.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
             Id="3ee05060-f57c-4dbc-8944-f639a65c03f7"
             name="ExecutionOccurrenceSpecification19">
             <event>
@@ -997,24 +1015,6 @@
               <lifelineMoniker
                 Id="04cf0e2b-6ad2-48fa-9d15-f0e32d38ead5"
                 LastKnownName="GameReducer :: Redux Store"
-                LastKnownLocation="ModelingProjectVisualStudio.uml" />
-            </covered>
-          </executionOccurrenceSpecification>
-          <executionOccurrenceSpecification
-            Id="d4b3b672-4c12-48f5-94ff-dcbd1b4c3d0b"
-            name="ExecutionOccurrenceSpecification22">
-            <event>
-              <executionOccurrenceSpecificationReferencesEvent>
-                <executionEventMoniker
-                  Id="8cb3818f-4050-42b0-8637-456bb0a6ee5a"
-                  LastKnownName="ExecutionEvent"
-                  LastKnownLocation="ModelingProjectVisualStudio.uml" />
-              </executionOccurrenceSpecificationReferencesEvent>
-            </event>
-            <covered>
-              <lifelineMoniker
-                Id="9f874cc2-ae9d-4bfe-9589-41e76e1f1d07"
-                LastKnownName="Game :: React Component"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -1308,9 +1308,9 @@
           </lifeline>
           <lifeline
             Id="be267fca-4b35-428e-b661-7f50633ab676"
-            name="GetMnemonicImages :: Data"
+            name="GetMnemonicImages :: Model"
             isActor="false"
-            lifelineDisplayName="GetMnemonicImages :: Data">
+            lifelineDisplayName="GetMnemonicImages :: Model">
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker
                 Id="e9396f75-1a10-4366-92be-1d0e23f40330"
@@ -2033,7 +2033,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="7619b486-6562-47b8-8627-5c9665649c8f"
-                LastKnownName="Games :: Data"
+                LastKnownName="Games :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </coveredLifelines>
             <finish>
@@ -2091,20 +2091,10 @@
             <covered>
               <lifelineMoniker
                 Id="7619b486-6562-47b8-8627-5c9665649c8f"
-                LastKnownName="Games :: Data"
+                LastKnownName="Games :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="559894a0-b00c-4c17-bc57-789623bd8c13"
-            name="MessageOccurrenceSpecification15">
-            <covered>
-              <lifelineMoniker
-                Id="7619b486-6562-47b8-8627-5c9665649c8f"
-                LastKnownName="Games :: Data"
-                LastKnownLocation="ModelingProjectVisualStudio.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
             Id="3f418dcb-ca5d-48e0-8c30-bc180e902d6c"
             name="MessageOccurrenceSpecification14">
@@ -2116,12 +2106,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
+            Id="559894a0-b00c-4c17-bc57-789623bd8c13"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="7619b486-6562-47b8-8627-5c9665649c8f"
+                LastKnownName="Games :: Model"
+                LastKnownLocation="ModelingProjectVisualStudio.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
             Id="e4ade7b9-f736-43b1-862b-c57d81a212e0"
             name="MessageOccurrenceSpecification16">
             <covered>
               <lifelineMoniker
                 Id="7619b486-6562-47b8-8627-5c9665649c8f"
-                LastKnownName="Games :: Data"
+                LastKnownName="Games :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2149,7 +2149,7 @@
             <covered>
               <lifelineMoniker
                 Id="7619b486-6562-47b8-8627-5c9665649c8f"
-                LastKnownName="Games :: Data"
+                LastKnownName="Games :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2159,7 +2159,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </coveredLifelines>
             <finish>
@@ -2199,7 +2199,7 @@
             <covered>
               <lifelineMoniker
                 Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2219,7 +2219,7 @@
             <covered>
               <lifelineMoniker
                 Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2229,7 +2229,7 @@
             <covered>
               <lifelineMoniker
                 Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -2257,7 +2257,7 @@
             <covered>
               <lifelineMoniker
                 Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-                LastKnownName="GetMnemonicImages :: Data"
+                LastKnownName="GetMnemonicImages :: Model"
                 LastKnownLocation="ModelingProjectVisualStudio.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -2327,9 +2327,9 @@
           </lifeline>
           <lifeline
             Id="7619b486-6562-47b8-8627-5c9665649c8f"
-            name="Games :: Data"
+            name="Games :: Model"
             isActor="false"
-            lifelineDisplayName="Games :: Data">
+            lifelineDisplayName="Games :: Model">
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker
                 Id="f297deb5-b2a3-4edf-a04e-bde323646220"
@@ -2343,9 +2343,9 @@
           </lifeline>
           <lifeline
             Id="df5a085c-27e3-4178-8ebb-505b37f8d7b5"
-            name="GetMnemonicImages :: Data"
+            name="GetMnemonicImages :: Model"
             isActor="false"
-            lifelineDisplayName="GetMnemonicImages :: Data">
+            lifelineDisplayName="GetMnemonicImages :: Model">
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker
                 Id="c8bc19f2-f3f5-4e28-94ab-8f9ae9fe5ec6"

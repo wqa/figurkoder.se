@@ -119,14 +119,14 @@
       </relativeChildShapes>
     </lifelineShape>
     <lifelineShape Id="e7eb3e31-c148-40a4-a785-5b3859d4a101" absoluteBounds="5.125, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
-      <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+      <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
       <relativeChildShapes>
-        <umlLifelineHeadShape Id="0d8d11a7-6d39-4dbe-a043-5e3d2a295a39" absoluteBounds="4.2537275862693784, 0.6, 1.8925448274612426, 0.4" customColor="White" visualStyleMode="Modified">
-          <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+        <umlLifelineHeadShape Id="0d8d11a7-6d39-4dbe-a043-5e3d2a295a39" absoluteBounds="4.2156959486007688, 0.6, 1.9686081027984619, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
           <relativeChildShapes />
         </umlLifelineHeadShape>
         <lifelineHoverShape Id="92cae2f6-90b3-4a5c-be7a-8650cc075e87" absoluteBounds="5.125, 1, 0, 7">
-          <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Data" />
+          <lifelineMoniker Id="3872fc83-6ece-4375-b32b-045405f39aef" LastKnownName="GetMnemonicImages :: Model" />
         </lifelineHoverShape>
         <umlExecutionSpecificationShape Id="dd812f15-f90c-4d0b-9461-80192218bc8a" absoluteBounds="5.125, 1.6, 0.15, 0.55000000000000027" customColor="184, 204, 215" visualStyleMode="Modified">
           <behaviorExecutionSpecificationMoniker Id="2945a26b-f4b0-446f-8248-ae8792317ac8" LastKnownName="BehaviorExecutionSpecification3" />
