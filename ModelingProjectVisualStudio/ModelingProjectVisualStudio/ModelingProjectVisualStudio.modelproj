@@ -92,12 +92,40 @@
       <SubType>Content</SubType>
       <DependentUpon>newApp\GameComponent.classdiagram</DependentUpon>
     </Content>
+    <Content Include="newApp\NewRenderGameUMLSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="newApp\NewRenderGameUMLSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>newApp\NewRenderGameUMLSequenceDiagram.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="newApp\NewUMLDesignModel.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="newApp\NewUMLDesignModel.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>newApp\NewUMLDesignModel.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="newApp\NewStartGameUMLSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="newApp\NewStartGameUMLSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>newApp\NewStartGameUMLSequenceDiagram.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="oldApp\OldRenderGameUMLSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="oldApp\OldRenderGameUMLSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>oldApp\OldRenderGameUMLSequenceDiagram.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="oldApp\OldStartGameUMLSequenceDiagram.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="oldApp\OldStartGameUMLSequenceDiagram.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>oldApp\OldStartGameUMLSequenceDiagram.sequencediagram</DependentUpon>
     </Content>
     <Content Include="oldApp\OldUMLDesignModel.classdiagram">
       <SubType>Content</SubType>
