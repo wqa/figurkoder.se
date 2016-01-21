@@ -54,6 +54,30 @@
         LastKnownName="Plumber"
         LastKnownLocation="Package_2105.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e2582b0e-729a-4fad-9748-54d72303552f"
+        LastKnownName="View"
+        LastKnownLocation="Package_0904.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a149eee1-3099-40d5-b0d9-c13eacbc47d6"
+        LastKnownName="Controller"
+        LastKnownLocation="Package1_0904.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="0e22105a-82da-4de6-bd91-e0a358b0f554"
+        LastKnownName="Model"
+        LastKnownLocation="Package2_0904.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d8871f26-9ae6-41a6-a1c8-8840b62bb1a5"
+        LastKnownName="Model / Data"
+        LastKnownLocation="Package3_0904.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
