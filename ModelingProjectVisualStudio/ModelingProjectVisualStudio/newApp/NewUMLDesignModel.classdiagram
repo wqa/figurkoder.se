@@ -161,11 +161,11 @@
       </package>
     </logicalClassDesignerModelHasPackages>
     <logicalClassDesignerModelHasPackages>
-      <package Id="ec60a5fe-6fa1-4e8a-bab5-8a2d3be0f574" name="Model - Redux">
+      <package Id="ec60a5fe-6fa1-4e8a-bab5-8a2d3be0f574" name="Model">
         <elementDefinition Id="0ed78719-570f-409d-8764-87cc66fc48f6" />
         <packagedElements>
           <packageHasNamedElement>
-            <package Id="d270f736-e6df-4830-934f-3ce48cd8836f" name="Actions">
+            <package Id="d270f736-e6df-4830-934f-3ce48cd8836f" name="Actions :: Redux">
               <elementDefinition Id="e8fb1bd8-cb33-46c0-8923-d0ab8bf03504" />
               <packagedElements>
                 <packageHasNamedElement>
@@ -348,7 +348,7 @@
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="e9fca014-4e84-470c-8fd4-dadc85153174" name="Store">
+            <package Id="e9fca014-4e84-470c-8fd4-dadc85153174" name="Store :: Redux">
               <elementDefinition Id="4e330ee6-bb47-4280-ad85-8252c7551a36" />
               <packagedElements>
                 <packageHasNamedElement>
@@ -428,35 +428,6 @@
               </packagedElements>
             </package>
           </packageHasNamedElement>
-        </packagedElements>
-      </package>
-    </logicalClassDesignerModelHasPackages>
-    <packageHasNamedElement>
-      <package Id="0ca5d8bb-fe27-4550-901c-21a7ce27439b" name="Master Component">
-        <elementDefinition Id="095268c3-40a3-438c-b2d2-5e8066359291" />
-        <packagedElements>
-          <packageHasNamedElement>
-            <class Id="296d5655-f61c-49a1-8d50-283bc4460ff7" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="9da1e076-c5f9-41c7-a964-825bbb8a8141" />
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="4fb429fe-c1c5-4cb6-8b82-1d3e2c239c9a" name="CustomHeader" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="8726141c-e897-4688-a6d1-2f634ad13dc0" />
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="7a4be409-6f94-4fad-891c-a1b7fa0d87db" name="Container" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="54945239-80c0-4033-b9a8-8061aeb92275" />
-            </class>
-          </packageHasNamedElement>
-        </packagedElements>
-      </package>
-    </packageHasNamedElement>
-    <logicalClassDesignerModelHasPackages>
-      <package Id="caf6d4fa-0a6a-4941-ba9a-c4ca2a7cc695" name="Data - JS Objects">
-        <elementDefinition Id="d27d3d8b-57bb-41f3-a1e0-70ba41652772" />
-        <packagedElements>
           <packageHasNamedElement>
             <class Id="c6863341-b256-4d9b-8e78-e853942d5b1d" name="Games" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="638933f7-5658-4ce0-86c6-6d04c431d64b" />
@@ -497,88 +468,103 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <package Id="064b52fa-7128-44ec-ba90-643b9ab29b1d" name="Mnemonic">
-              <elementDefinition Id="87a5b4f7-712d-46bf-b7db-eab052313570" />
-              <packagedElements>
-                <packageHasNamedElement>
-                  <class Id="28afe585-a7af-4aa2-a811-ff13c7b536a0" name="GetMnemonicImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                    <elementDefinition Id="966b07fe-7844-4699-9eb6-b010b453d0c4" />
-                    <suppliersInternal>
-                      <dependency Id="7a98f8e8-2e36-459e-919c-98c358132a06">
-                        <classMoniker Id="c6863341-b256-4d9b-8e78-e853942d5b1d" LastKnownName="Games" />
-                        <elementDefinition Id="14bc338c-bb2c-4fd6-8d52-64cfa6c21888" />
-                      </dependency>
-                      <dependency Id="41c9470d-4669-4ced-9bc4-acb02ac7cad5">
-                        <classMoniker Id="b4be5792-6669-417f-86fd-ae5e459e9645" LastKnownName="MnemonicHelper" />
-                        <elementDefinition Id="b7aaf8f8-e2e7-4543-af9e-0f96d8af2087" />
-                      </dependency>
-                    </suppliersInternal>
-                  </class>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <class Id="b4be5792-6669-417f-86fd-ae5e459e9645" name="MnemonicHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
-                    <elementDefinition Id="c8b8810b-95c6-4f60-9bfb-8a3f8402c6f5" />
-                  </class>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <package Id="b3cc4b2b-75b4-4112-bf0d-38f8408c8d35" name="Games">
-                    <elementDefinition Id="d9673da5-0f92-4892-b4d2-f9f3bd536f3c" />
-                    <packagedElements>
-                      <packageHasNamedElement>
-                        <class Id="b46756e5-c906-4f4d-8910-6a3e021ea4ab" name="MnemonicAlphabetImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="78782da6-7af0-45ed-a7c4-a7b1cbee2600" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="6389cc61-4857-438c-ab40-b1bc59babd61" name="MnemonicDaysImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="09d33a33-08ec-437b-90b4-4c3c9cffef28" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="c4a2d5ed-fdac-4c58-a1e0-aca097fd5204" name="MnemonicFemaleNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="56020c49-fc46-4df0-8a78-e19f38a1ef7c" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="8036ff76-2757-43a1-83f0-d35678214c6f" name="MnemonicThreeCharNumberImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="9a97a4a6-f938-4e11-a52a-02aee51eeac4" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="0cd24c21-2624-4531-b620-e6bed58c9e96" name="MnemonicMaleNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="7ca47e66-4889-495c-a204-ee5b3296fef9" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="008aaced-cdff-4856-944b-e8fd641bff6a" name="MnemonicMonthImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="e657bcfd-f0c9-4c7e-a299-f4c7b145c412" />
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="bc800305-75ff-4cb0-bf5b-69e089ffff7a" name="MnemonicNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="8a5d882e-72c2-4431-8bc6-36f187d1ea1a" />
-                          <suppliersInternal>
-                            <dependency Id="fd5639b9-f3ad-4901-ac4b-9d16794f18ab">
-                              <classMoniker Id="0cd24c21-2624-4531-b620-e6bed58c9e96" LastKnownName="MnemonicMaleNameImages" />
-                              <elementDefinition Id="2d3a1200-c2c5-4f98-8e63-a3c129534fb8" />
-                            </dependency>
-                            <dependency Id="22a9c5d8-6b43-4397-a343-6ecf08cee2da">
-                              <classMoniker Id="c4a2d5ed-fdac-4c58-a1e0-aca097fd5204" LastKnownName="MnemonicFemaleNameImages" />
-                              <elementDefinition Id="45a045e1-1b4d-415f-ac1a-574eca9be090" />
-                            </dependency>
-                          </suppliersInternal>
-                        </class>
-                      </packageHasNamedElement>
-                      <packageHasNamedElement>
-                        <class Id="f0671b88-fa34-4644-8b46-391e1805b2d2" name="MnemonicNumberImages" isAbstract="false" isLeaf="false" isActiveClass="false">
-                          <elementDefinition Id="129c19b6-c0c5-4196-b87b-581f4ff70335" />
-                        </class>
-                      </packageHasNamedElement>
-                    </packagedElements>
-                  </package>
-                </packageHasNamedElement>
-              </packagedElements>
-            </package>
+            <class Id="28afe585-a7af-4aa2-a811-ff13c7b536a0" name="GetMnemonicImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="966b07fe-7844-4699-9eb6-b010b453d0c4" />
+              <suppliersInternal>
+                <dependency Id="7a98f8e8-2e36-459e-919c-98c358132a06">
+                  <classMoniker Id="c6863341-b256-4d9b-8e78-e853942d5b1d" LastKnownName="Games" />
+                  <elementDefinition Id="14bc338c-bb2c-4fd6-8d52-64cfa6c21888" />
+                </dependency>
+                <dependency Id="41c9470d-4669-4ced-9bc4-acb02ac7cad5">
+                  <classMoniker Id="b4be5792-6669-417f-86fd-ae5e459e9645" LastKnownName="MnemonicHelper" />
+                  <elementDefinition Id="b7aaf8f8-e2e7-4543-af9e-0f96d8af2087" />
+                </dependency>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="b4be5792-6669-417f-86fd-ae5e459e9645" name="MnemonicHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c8b8810b-95c6-4f60-9bfb-8a3f8402c6f5" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <package Id="0ca5d8bb-fe27-4550-901c-21a7ce27439b" name="Master Component">
+        <elementDefinition Id="095268c3-40a3-438c-b2d2-5e8066359291" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="296d5655-f61c-49a1-8d50-283bc4460ff7" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="9da1e076-c5f9-41c7-a964-825bbb8a8141" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="4fb429fe-c1c5-4cb6-8b82-1d3e2c239c9a" name="CustomHeader" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8726141c-e897-4688-a6d1-2f634ad13dc0" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="7a4be409-6f94-4fad-891c-a1b7fa0d87db" name="Container" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="54945239-80c0-4033-b9a8-8061aeb92275" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="caf6d4fa-0a6a-4941-ba9a-c4ca2a7cc695" name="Data - JS Objects">
+        <elementDefinition Id="d27d3d8b-57bb-41f3-a1e0-70ba41652772" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="6389cc61-4857-438c-ab40-b1bc59babd61" name="MnemonicDaysImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="09d33a33-08ec-437b-90b4-4c3c9cffef28" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="0cd24c21-2624-4531-b620-e6bed58c9e96" name="MnemonicMaleNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="7ca47e66-4889-495c-a204-ee5b3296fef9" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c4a2d5ed-fdac-4c58-a1e0-aca097fd5204" name="MnemonicFemaleNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="56020c49-fc46-4df0-8a78-e19f38a1ef7c" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="008aaced-cdff-4856-944b-e8fd641bff6a" name="MnemonicMonthImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="e657bcfd-f0c9-4c7e-a299-f4c7b145c412" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bc800305-75ff-4cb0-bf5b-69e089ffff7a" name="MnemonicNameImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8a5d882e-72c2-4431-8bc6-36f187d1ea1a" />
+              <suppliersInternal>
+                <dependency Id="fd5639b9-f3ad-4901-ac4b-9d16794f18ab">
+                  <classMoniker Id="0cd24c21-2624-4531-b620-e6bed58c9e96" LastKnownName="MnemonicMaleNameImages" />
+                  <elementDefinition Id="2d3a1200-c2c5-4f98-8e63-a3c129534fb8" />
+                </dependency>
+                <dependency Id="22a9c5d8-6b43-4397-a343-6ecf08cee2da">
+                  <classMoniker Id="c4a2d5ed-fdac-4c58-a1e0-aca097fd5204" LastKnownName="MnemonicFemaleNameImages" />
+                  <elementDefinition Id="45a045e1-1b4d-415f-ac1a-574eca9be090" />
+                </dependency>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f0671b88-fa34-4644-8b46-391e1805b2d2" name="MnemonicNumberImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="129c19b6-c0c5-4196-b87b-581f4ff70335" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8036ff76-2757-43a1-83f0-d35678214c6f" name="MnemonicThreeCharNumberImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="9a97a4a6-f938-4e11-a52a-02aee51eeac4" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="b46756e5-c906-4f4d-8910-6a3e021ea4ab" name="MnemonicAlphabetImages" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="78782da6-7af0-45ed-a7c4-a7b1cbee2600" />
+            </class>
           </packageHasNamedElement>
         </packagedElements>
       </package>
