@@ -23,7 +23,7 @@ To build a static version of the project run:
 npm run build
 ```
 
-Note that all source code is located under `src/`
+Note that all source code is located under `src/`. When building the project the build ends up in the root. This is a bit ugly and the reason is that both development and hosting is done from the same branch on gh-pages.
 
 ## Roadmap
 
@@ -33,6 +33,7 @@ Note that all source code is located under `src/`
  - When going back from the Result's the settings should be kept.
  - Add a setting for turning vibrations on and off.
  - Remove all React-Redux bindings from middle and leaf components and have bindings only in the top level components.
+ - Move `src` to a seperate branch.
 
 ### Done
 
