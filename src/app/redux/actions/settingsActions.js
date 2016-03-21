@@ -1,7 +1,7 @@
 import ActionTypes from "./actionTypes"
 
 const {
-	RESET,
+	RESET_SETTINGS,
 	SET_INTERVAL,
 	SET_BEGIN,
 	SET_END,
@@ -12,7 +12,7 @@ const SettingsActions = {
 	resetSettings: () => {
 		return (dispatch, getState) => {
       dispatch({
-        type: RESET,
+        type: RESET_SETTINGS,
       })
 		}
 	},

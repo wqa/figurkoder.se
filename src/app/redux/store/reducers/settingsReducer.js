@@ -2,7 +2,7 @@ import InitialState from '../initialState'
 import { ActionTypesSettings } from '../../actions/actionTypes'
 
 const {
-  RESET,
+  RESET_SETTINGS,
   STOP_GAME,
   SET_INTERVAL,
   SET_BEGIN,
@@ -12,7 +12,7 @@ const {
 
 const SettingsReducer = (state, action) => {
   switch (action.type) {
-    case RESET:
+    case RESET_SETTINGS:
       return InitialState().settings
       break
     // case STOP_GAME:

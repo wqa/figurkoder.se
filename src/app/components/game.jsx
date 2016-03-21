@@ -11,7 +11,12 @@ import GetMnemonicImages from '../data/mnemonic/getMnemonicImages'
 
 class Game extends React.Component{
   componentDidMount() {
-    this.props.reset()
+    this.props.resetGame()
+    // this.props.resetSettings()
+  }
+
+  componentWillUnmount() {
+    this.props.stopGame()
   }
 
   render() {
@@ -38,14 +43,18 @@ class Game extends React.Component{
 Game.propTypes = {
   currentPair: PropTypes.number.isRequired,
   data: PropTypes.array.isRequired,
-  reset: PropTypes.func.isRequired,
+  resetGame: PropTypes.func.isRequired,
+  resetSettings: PropTypes.func.isRequired,
+  stopGame: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => state.game
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    reset: () => { dispatch(Actions.resetGame()) },
+    resetGame: () => { dispatch(Actions.resetGame()) },
+    resetSettings: () => { dispatch(Actions.resetSettings()) },
+    stopGame: (path) => { dispatch(Actions.stopGame(path)) },
   }
 }
 

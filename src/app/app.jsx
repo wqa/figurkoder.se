@@ -11,7 +11,8 @@ import createHistory from 'history/lib/createHashHistory'
 import { useQueries } from 'history'
 import InitialState from './redux/store/initialState'
 
-const history = useQueries(createHistory)()
+// const history = useQueries(createHistory)()
+const history = createHistory({ queryKey: false })
 const Store = configureStore(InitialState(), history)
 
 //Needed for React Developer Tools

@@ -75,11 +75,11 @@ const GameActions = {
 				type: STOP_GAME,
 				countdown: +getState().settings.interval - 1,
 			}
-			if (getState().settings.practice) {
+			if (path && getState().settings.practice) {
 	      dispatch({
 					...stopActionObject,
 	      })
-			} else {
+			} else if (path) {
 				dispatch({
 					...stopActionObject,
 					meta: {
