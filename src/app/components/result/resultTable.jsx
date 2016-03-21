@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { DataTable } from 'react-mdl'
+import { DataTable, TableHeader } from 'react-mdl'
 
 const styles = {
   datatable: {
@@ -47,12 +47,15 @@ const ResultTable = (props) => {
   return(
     <DataTable
       style={styles.datatable}
-      columns={[
-          {name: 'mnemomicImage', label: 'Figurkod'},
-          {name: 'time', label: 'Tid', numeric: true},
-      ]}
-      data={presentation}
-    />
+      rows={presentation}
+    >
+      <TableHeader name='mnemomicImage'>
+        Figurkod
+      </TableHeader>
+      <TableHeader numeric  name='time' tooltip='Tid innan du tryckte på "Nästa"'>
+        Tid
+      </TableHeader>
+    </DataTable>
   )
 }
 
