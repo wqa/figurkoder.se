@@ -8,6 +8,7 @@ var upupStartPath = path.resolve(__dirname, 'src/app/scripts/upup/upup.start.js'
 var materialPath = path.resolve(__dirname, 'src/app/scripts/material.js')
 var redirectToHTTPSPath = path.resolve(__dirname, 'src/app/scripts/redirectToHTTPS.js')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const production = process.argv.find((element) => element === '--production') ? true : false
 
@@ -27,7 +28,7 @@ const jsEntry = production ? jsBaseEntry.concat([
 var config = {
   entry: {
     js: jsEntry,
-    html: './src/www/index.html',
+    // html: './src/www/index.html',
   },
   devServer:{
     contentBase: 'src/www',
@@ -48,6 +49,11 @@ var config = {
     ], sourcePath),
     new webpack.DefinePlugin({
         PRODUCTION: production,
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/www/index.html.template',
+      production: production,
+      inject: false,
     }),
   ],
   module: {

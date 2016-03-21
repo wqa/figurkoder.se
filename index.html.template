@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sv">
+<html lang="sv" <% if (htmlWebpackPlugin.options.production){ %>manifest="manifest.appcache"<% } %>>
 
 <head>
   <meta charset="utf-8">
@@ -11,13 +11,21 @@
   <link rel="stylesheet" href="css/material.css" />
   <link rel="stylesheet" href="css/material-grid.min.css" />
   <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  <!-- android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+  <meta name="apple-mobile-web-app-title" content="Figurkoder.se">
+
 </head>
 
 <body>
   <div id="app"></div>
-
+  <% if (htmlWebpackPlugin.options.production){ %>
   <script src="upup.min.js"></script>
-  <script src="scripts/upup.start.js"></script>
+  <script src="scripts/upup.start.js"></script><% } %>
   <script src="scripts/material.js"></script>
   <script src="scripts/boundle.min.js"></script>
 </body>
